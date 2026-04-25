@@ -2201,13 +2201,6 @@ render();
     </div>
   </div>
 </div>
-
-<!-- Update toast -->
-<div id="pwa-update-toast" class="pwa-toast" role="status" aria-live="polite" hidden>
-  A new version is available.
-  <button id="pwa-update-btn" type="button">Reload</button>
-</div>
-
 <style>
   .pwa-banner{
     position:fixed; left:50%; transform:translateX(-50%);
@@ -2235,19 +2228,6 @@ render();
     .pwa-banner__copy{ flex:1 1 65%; }
     .pwa-banner__actions{ flex:1 1 100%; justify-content:flex-end; }
   }
-  .pwa-toast{
-    position:fixed; left:50%; transform:translateX(-50%);
-    bottom:max(16px, env(safe-area-inset-bottom));
-    z-index:10000; background:var(--oasis-dark, #231F20); color:#fff;
-    padding:12px 16px; border-radius:999px; font-family:var(--sans, system-ui, sans-serif);
-    font-size:13px; box-shadow:0 8px 28px rgba(0,0,0,.25);
-    display:flex; align-items:center; gap:12px;
-  }
-  .pwa-toast button{
-    background:#fff; color:var(--oasis-dark, #231F20);
-    border-radius:999px; padding:6px 14px; font-size:12px;
-    text-transform:uppercase; letter-spacing:.1em; font-weight:500;
-  }
 </style>
 
 <script>
@@ -2261,31 +2241,13 @@ render();
           reg.addEventListener('updatefound', function() {
             var sw = reg.installing;
             if (!sw) return;
-            sw.addEventListener('statechange', function() {
-              if (sw.state === 'installed' && navigator.serviceWorker.controller) {
-                showUpdateToast(sw);
-              }
-            });
+            // (silent updates: new SW activates in background; users see fresh content on next launch)
           });
         })
         .catch(function(err){ console.warn('[PWA] SW registration failed', err); });
 
-      // Reload once when the new SW takes control
-      var refreshing = false;
-      navigator.serviceWorker.addEventListener('controllerchange', function() {
-        if (refreshing) return;
-        refreshing = true;
-        window.location.reload();
-      });
+      
     });
-  }
-
-  function showUpdateToast(sw){
-    var toast = document.getElementById('pwa-update-toast');
-    var btn = document.getElementById('pwa-update-btn');
-    if (!toast || !btn) return;
-    toast.hidden = false;
-    btn.onclick = function(){ if (sw) sw.postMessage('SKIP_WAITING'); };
   }
 
   // ---- Install prompt ----
