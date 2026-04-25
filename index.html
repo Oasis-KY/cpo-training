@@ -1,0 +1,2173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CPO Exam Prep — Powered by Oasis.ky</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --oasis-dark:#231F20;
+  --oasis-charcoal:#33373D;
+  --oasis-gray:#3F444B;
+  --oasis-teal:#226683;
+  --oasis-navy:#1A405F;
+  --oasis-aqua:#4A9FBF;
+  --oasis-aqua-light:#D6ECF3;
+  --oasis-cream:#F7F4EE;
+  --oasis-paper:#FFFFFF;
+  --oasis-line:#E6E1D7;
+  --oasis-success:#2D8C5C;
+  --oasis-success-bg:#E5F3EC;
+  --oasis-error:#B23A2E;
+  --oasis-error-bg:#FBEAE7;
+  --oasis-warning:#C68A2E;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Jost',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --shadow-sm:0 2px 8px rgba(35,31,32,.06);
+  --shadow:0 8px 28px rgba(35,31,32,.1);
+  --shadow-lg:0 18px 50px rgba(35,31,32,.18);
+  --radius:14px;
+  --radius-sm:8px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:var(--sans);
+  color:var(--oasis-dark);
+  background:var(--oasis-cream);
+  font-size:16px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+input,select,textarea{font-family:inherit}
+a{color:var(--oasis-teal);text-decoration:none}
+img{max-width:100%;display:block}
+
+/* ========== Layout ========== */
+.app{min-height:100vh;display:flex;flex-direction:column}
+.topbar{
+  background:var(--oasis-dark);
+  color:#fff;
+  padding:14px 28px;
+  display:flex;align-items:center;justify-content:space-between;
+  position:sticky;top:0;z-index:50;
+  border-bottom:1px solid #000;
+}
+.brand{display:flex;align-items:center;gap:18px}
+.brand-logo{height:32px;width:auto;filter:none}
+.brand-divider{width:1px;height:22px;background:rgba(255,255,255,.25)}
+.brand-tag{font-family:var(--serif);font-weight:300;font-size:18px;letter-spacing:.18em;text-transform:uppercase;color:#fff}
+.topbar-nav{display:flex;align-items:center;gap:14px}
+.topbar-nav .who{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.btn-link{
+  background:transparent;color:#fff;
+  border:1px solid rgba(255,255,255,.35);
+  padding:8px 14px;border-radius:999px;
+  font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  transition:all .2s;
+}
+.btn-link:hover{background:#fff;color:var(--oasis-dark);border-color:#fff}
+
+main{flex:1;width:100%}
+.wrap{max-width:1100px;margin:0 auto;padding:36px 28px 80px}
+
+/* ========== Footer ========== */
+.footer{
+  background:var(--oasis-dark);color:rgba(255,255,255,.75);
+  padding:28px;margin-top:auto;
+  border-top:1px solid #000;
+}
+.footer-inner{
+  max-width:1100px;margin:0 auto;
+  display:flex;align-items:center;gap:18px;justify-content:center;text-align:center;
+}
+.footer-logo{height:36px;width:auto}
+.footer-title{font-family:var(--serif);font-weight:300;color:#fff;font-size:16px;letter-spacing:.2em;text-transform:uppercase}
+.footer-sub{font-size:12px;letter-spacing:.06em;color:rgba(255,255,255,.55);margin-top:2px}
+
+/* ========== Welcome / Login ========== */
+.welcome{
+  min-height:calc(100vh - 80px);
+  display:flex;align-items:center;justify-content:center;
+  padding:40px 24px;
+  background:
+    linear-gradient(180deg,rgba(35,31,32,.78),rgba(34,102,131,.55)),
+    radial-gradient(circle at 20% 0%, #2a6f93 0%, transparent 60%),
+    radial-gradient(circle at 80% 90%, #1a405f 0%, transparent 50%),
+    var(--oasis-dark);
+  background-size:cover;
+  position:relative;overflow:hidden;
+}
+.welcome::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse at center,transparent 30%,rgba(0,0,0,.4) 100%);
+  pointer-events:none;
+}
+.welcome-card{
+  background:rgba(255,255,255,.97);
+  border-radius:var(--radius);padding:48px 44px;
+  width:100%;max-width:520px;
+  box-shadow:var(--shadow-lg);
+  position:relative;z-index:1;
+  text-align:center;
+}
+.welcome-logo{height:46px;margin:0 auto 22px;filter:invert(1)}
+.welcome-eyebrow{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--oasis-teal);margin-bottom:14px}
+.welcome-title{font-family:var(--serif);font-weight:400;font-size:42px;line-height:1.1;letter-spacing:.02em;color:var(--oasis-dark);margin-bottom:12px}
+.welcome-sub{color:var(--oasis-gray);font-size:15px;margin-bottom:32px}
+.btn-primary{
+  display:inline-block;
+  background:var(--oasis-teal);color:#fff;
+  padding:14px 32px;border-radius:999px;
+  font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;
+  transition:all .2s;border:1px solid var(--oasis-teal);
+}
+.btn-primary:hover{background:var(--oasis-navy);border-color:var(--oasis-navy);transform:translateY(-1px);box-shadow:var(--shadow)}
+.btn-ghost{
+  display:inline-block;
+  background:transparent;color:var(--oasis-dark);
+  padding:14px 32px;border-radius:999px;
+  font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;
+  border:1px solid var(--oasis-dark);transition:all .2s;
+}
+.btn-ghost:hover{background:var(--oasis-dark);color:#fff}
+.btn-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* ========== Forms ========== */
+.field{margin-bottom:18px;text-align:left}
+.field label{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--oasis-gray);margin-bottom:8px;font-weight:500}
+.field input,.field select{
+  width:100%;padding:14px 16px;
+  border:1px solid var(--oasis-line);border-radius:var(--radius-sm);
+  background:#fff;font-size:16px;color:var(--oasis-dark);
+  transition:border-color .15s,box-shadow .15s;
+}
+.field input:focus,.field select:focus{outline:none;border-color:var(--oasis-teal);box-shadow:0 0 0 3px rgba(34,102,131,.15)}
+.pin-input input{letter-spacing:.6em;text-align:center;font-size:22px;font-weight:500}
+.muted{color:var(--oasis-gray);font-size:13px}
+.error{color:var(--oasis-error);font-size:13px;margin-top:8px;min-height:18px}
+
+/* ========== Profile chip list ========== */
+.profile-list{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
+.profile-chip{
+  display:flex;align-items:center;gap:14px;
+  padding:14px 16px;border:1px solid var(--oasis-line);border-radius:var(--radius-sm);
+  background:#fff;cursor:pointer;text-align:left;width:100%;transition:all .15s;
+}
+.profile-chip:hover{border-color:var(--oasis-teal);background:var(--oasis-aqua-light)}
+.profile-chip.selected{border-color:var(--oasis-teal);background:#fff;box-shadow:0 0 0 2px var(--oasis-teal) inset}
+.profile-avatar{
+  width:38px;height:38px;border-radius:50%;
+  background:linear-gradient(135deg,var(--oasis-teal),var(--oasis-navy));
+  color:#fff;display:flex;align-items:center;justify-content:center;font-weight:500;letter-spacing:.05em;
+}
+.profile-meta{flex:1}
+.profile-name{font-weight:500;color:var(--oasis-dark)}
+.profile-stat{font-size:12px;color:var(--oasis-gray);letter-spacing:.06em}
+
+/* ========== Dashboard ========== */
+.hero{
+  background:
+    linear-gradient(135deg,rgba(35,31,32,.85),rgba(34,102,131,.7)),
+    radial-gradient(circle at 80% 0%,#2a6f93,transparent 60%),
+    var(--oasis-dark);
+  color:#fff;border-radius:var(--radius);
+  padding:36px 36px;
+  position:relative;overflow:hidden;
+  margin-bottom:28px;
+}
+.hero::after{
+  content:"";position:absolute;right:-30px;bottom:-50px;width:280px;height:280px;
+  background:radial-gradient(circle,rgba(255,255,255,.06),transparent 70%);
+  border-radius:50%;
+}
+.hero-eyebrow{font-size:11px;letter-spacing:.3em;text-transform:uppercase;opacity:.75;margin-bottom:8px}
+.hero-title{font-family:var(--serif);font-weight:300;font-size:38px;letter-spacing:.02em;line-height:1.15}
+.hero-name{font-style:italic}
+.hero-sub{margin-top:10px;opacity:.85;max-width:680px}
+.hero-stats{display:flex;gap:32px;margin-top:24px;flex-wrap:wrap;position:relative;z-index:1}
+.stat{}
+.stat-num{font-family:var(--serif);font-weight:400;font-size:34px;line-height:1}
+.stat-label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.75;margin-top:4px}
+.hero-actions{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;position:relative;z-index:1}
+.btn-light{background:#fff;color:var(--oasis-dark);padding:12px 26px;border-radius:999px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;transition:all .2s;border:1px solid #fff}
+.btn-light:hover{background:transparent;color:#fff}
+.btn-outline-light{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.4);padding:12px 26px;border-radius:999px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;transition:all .2s}
+.btn-outline-light:hover{background:#fff;color:var(--oasis-dark);border-color:#fff}
+
+.section-head{display:flex;align-items:baseline;justify-content:space-between;margin:8px 4px 18px}
+.section-title{font-family:var(--serif);font-size:26px;font-weight:400;letter-spacing:.04em;color:var(--oasis-dark)}
+.section-meta{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--oasis-gray)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:18px}
+
+.module-card{
+  background:#fff;border-radius:var(--radius);padding:22px;
+  border:1px solid var(--oasis-line);
+  display:flex;flex-direction:column;gap:14px;
+  transition:transform .18s,box-shadow .18s,border-color .18s;
+  cursor:pointer;position:relative;overflow:hidden;
+}
+.module-card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--oasis-teal)}
+.module-card .card-num{font-family:var(--serif);font-size:14px;color:var(--oasis-teal);letter-spacing:.18em;text-transform:uppercase}
+.module-card .card-title{font-family:var(--serif);font-size:22px;font-weight:500;color:var(--oasis-dark);line-height:1.2}
+.module-card .card-desc{font-size:13.5px;color:var(--oasis-gray);min-height:42px}
+.bar{height:6px;background:var(--oasis-line);border-radius:999px;overflow:hidden}
+.bar-fill{height:100%;background:linear-gradient(90deg,var(--oasis-aqua),var(--oasis-teal));transition:width .4s}
+.bar-row{display:flex;align-items:center;gap:10px}
+.bar-row .pct{font-size:12px;color:var(--oasis-gray);letter-spacing:.05em;min-width:38px;text-align:right}
+.badge{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:4px 10px;border-radius:999px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;
+}
+.badge-complete{background:var(--oasis-success-bg);color:var(--oasis-success)}
+.badge-progress{background:var(--oasis-aqua-light);color:var(--oasis-teal)}
+.badge-locked{background:#EFEAE0;color:var(--oasis-gray)}
+.badge-unlocked{background:#FCEDC9;color:#8C6A1F}
+
+.exam-card{
+  background:linear-gradient(135deg,#1A405F,#226683);color:#fff;
+  border-radius:var(--radius);padding:26px;
+  display:flex;align-items:center;gap:24px;flex-wrap:wrap;justify-content:space-between;
+  position:relative;overflow:hidden;
+}
+.exam-card.locked{
+  background:linear-gradient(135deg,#5C5651,#3F3A36);color:rgba(255,255,255,.8);
+}
+.exam-card::before{
+  content:"";position:absolute;left:-40px;top:-40px;width:200px;height:200px;
+  background:radial-gradient(circle,rgba(255,255,255,.1),transparent 70%);border-radius:50%;
+}
+.exam-icon{
+  width:62px;height:62px;border-radius:50%;
+  background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;
+  font-size:28px;flex-shrink:0;
+}
+.exam-info{flex:1;min-width:220px}
+.exam-eyebrow{font-size:11px;letter-spacing:.3em;text-transform:uppercase;opacity:.75}
+.exam-title{font-family:var(--serif);font-size:26px;font-weight:400;letter-spacing:.04em;margin-top:4px}
+.exam-desc{font-size:13px;opacity:.88;margin-top:6px;max-width:520px}
+.exam-actions{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.exam-best{font-size:11px;letter-spacing:.18em;text-transform:uppercase;opacity:.75}
+
+.unlock-banner{
+  background:linear-gradient(90deg,rgba(74,159,191,.18),rgba(34,102,131,.06));
+  border:1px solid rgba(34,102,131,.25);
+  border-radius:var(--radius);padding:18px 22px;
+  margin-bottom:18px;display:flex;align-items:center;gap:14px;
+}
+.unlock-banner .ring{font-size:22px}
+.unlock-banner b{color:var(--oasis-teal);font-family:var(--serif);font-size:18px;font-weight:500;letter-spacing:.04em}
+
+/* ========== Module Page ========== */
+.crumbs{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--oasis-gray);margin-bottom:14px}
+.crumbs a{color:var(--oasis-gray)}
+.module-head{
+  background:#fff;border:1px solid var(--oasis-line);border-radius:var(--radius);
+  padding:28px 28px;margin-bottom:22px;
+  position:relative;overflow:hidden;
+}
+.module-head::before{
+  content:"";position:absolute;right:-60px;top:-60px;width:240px;height:240px;
+  background:radial-gradient(circle,rgba(74,159,191,.08),transparent 70%);border-radius:50%;
+}
+.module-head h1{font-family:var(--serif);font-weight:400;font-size:34px;line-height:1.15;letter-spacing:.02em;color:var(--oasis-dark);position:relative}
+.module-head .num{color:var(--oasis-teal);font-size:13px;letter-spacing:.3em;text-transform:uppercase;font-family:var(--sans);margin-bottom:4px}
+.module-head p.intro{margin-top:10px;color:var(--oasis-gray);max-width:760px;position:relative}
+.module-progress{display:flex;align-items:center;gap:16px;margin-top:18px;position:relative}
+.module-progress .bar{flex:1;max-width:260px}
+
+.section-card{
+  background:#fff;border:1px solid var(--oasis-line);border-radius:var(--radius);
+  padding:30px 32px;margin-bottom:18px;position:relative;
+}
+.section-card h2{font-family:var(--serif);font-weight:500;font-size:26px;letter-spacing:.02em;color:var(--oasis-dark);margin-bottom:8px;line-height:1.2}
+.section-card .lead{color:var(--oasis-gray);font-size:14px;margin-bottom:14px;letter-spacing:.04em;text-transform:uppercase;font-size:11px;letter-spacing:.2em}
+.section-card .body{color:var(--oasis-charcoal);font-size:15.5px;line-height:1.75}
+.section-card .body p{margin-bottom:14px}
+.section-card .body ul{margin:6px 0 14px 22px}
+.section-card .body li{margin-bottom:6px}
+.section-card .body strong{color:var(--oasis-dark)}
+.section-mark{display:flex;align-items:center;gap:10px;margin-top:18px;padding-top:16px;border-top:1px dashed var(--oasis-line)}
+.read-toggle{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:8px 14px;border-radius:999px;
+  border:1px solid var(--oasis-teal);color:var(--oasis-teal);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;
+  background:#fff;transition:all .2s;
+}
+.read-toggle:hover{background:var(--oasis-teal);color:#fff}
+.read-toggle.done{background:var(--oasis-success);border-color:var(--oasis-success);color:#fff}
+.read-toggle.done::before{content:"✓ ";margin-right:4px}
+
+.quiz-block{
+  background:linear-gradient(180deg,#fff,#FAF8F3);
+  border:1px solid var(--oasis-line);border-radius:var(--radius);
+  padding:26px 30px;margin-bottom:22px;position:relative;
+  border-left:4px solid var(--oasis-teal);
+}
+.quiz-block.completion{border-left-color:var(--oasis-warning)}
+.quiz-eyebrow{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--oasis-teal);font-weight:500}
+.quiz-block.completion .quiz-eyebrow{color:var(--oasis-warning)}
+.quiz-title{font-family:var(--serif);font-size:24px;font-weight:500;color:var(--oasis-dark);margin-top:4px}
+.quiz-meta{font-size:13px;color:var(--oasis-gray);margin-top:4px;margin-bottom:16px}
+
+.q-card{background:#fff;border:1px solid var(--oasis-line);border-radius:var(--radius-sm);padding:20px;margin-bottom:14px}
+.q-prompt{font-weight:500;font-size:15.5px;color:var(--oasis-dark);margin-bottom:14px;line-height:1.45}
+.q-num{color:var(--oasis-teal);letter-spacing:.06em;margin-right:6px}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{
+  display:flex;align-items:flex-start;gap:12px;
+  padding:12px 14px;border:1px solid var(--oasis-line);border-radius:var(--radius-sm);
+  cursor:pointer;background:#fff;transition:all .15s;font-size:14.5px;
+}
+.opt:hover{border-color:var(--oasis-teal);background:var(--oasis-aqua-light)}
+.opt input{margin-top:3px;accent-color:var(--oasis-teal)}
+.opt.correct{border-color:var(--oasis-success);background:var(--oasis-success-bg);color:var(--oasis-success);font-weight:500}
+.opt.wrong{border-color:var(--oasis-error);background:var(--oasis-error-bg);color:var(--oasis-error);font-weight:500}
+.opt.disabled{cursor:default}
+.feedback{margin-top:10px;padding:10px 12px;border-radius:var(--radius-sm);font-size:13.5px}
+.feedback.correct{background:var(--oasis-success-bg);color:var(--oasis-success);border-left:3px solid var(--oasis-success)}
+.feedback.wrong{background:var(--oasis-error-bg);color:var(--oasis-error);border-left:3px solid var(--oasis-error)}
+
+.quiz-footer{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:14px;flex-wrap:wrap}
+.quiz-score{font-size:14px;color:var(--oasis-gray)}
+.quiz-score b{color:var(--oasis-dark)}
+
+/* ========== Final Exam ========== */
+.exam-shell{
+  background:#fff;border-radius:var(--radius);
+  border:1px solid var(--oasis-line);
+  padding:0;overflow:hidden;
+}
+.exam-bar{
+  background:linear-gradient(135deg,#1A405F,#226683);color:#fff;
+  padding:18px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;
+  position:sticky;top:60px;z-index:10;
+}
+.exam-bar .label{font-size:11px;letter-spacing:.24em;text-transform:uppercase;opacity:.75}
+.exam-bar .timer{
+  font-family:var(--serif);font-weight:500;font-size:32px;letter-spacing:.04em;
+  background:rgba(255,255,255,.12);padding:6px 18px;border-radius:8px;
+}
+.exam-bar .timer.warn{background:rgba(255,160,80,.25);color:#FFD7A3}
+.exam-bar .timer.danger{background:rgba(220,80,60,.35);color:#FFC9C2;animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.65}}
+.exam-progress-line{height:4px;background:rgba(255,255,255,.18);border-radius:99px;flex:1;min-width:200px;overflow:hidden}
+.exam-progress-line .fill{height:100%;background:#fff;width:0%;transition:width .3s}
+.exam-body{padding:30px}
+
+.review-q{padding:20px;border-radius:var(--radius-sm);margin-bottom:14px;border:1px solid var(--oasis-line);background:#fff}
+.review-q.wrong{border-left:4px solid var(--oasis-error);background:#FDF6F4}
+.review-q.right{border-left:4px solid var(--oasis-success);background:#F4FAF6}
+.review-line{display:flex;gap:8px;font-size:14px;margin-top:6px}
+.review-line b{font-weight:500;letter-spacing:.06em;text-transform:uppercase;font-size:11px;color:var(--oasis-gray);min-width:90px}
+.review-line .ans-wrong{color:var(--oasis-error);font-weight:500}
+.review-line .ans-right{color:var(--oasis-success);font-weight:500}
+.review-expl{margin-top:10px;padding:12px;background:var(--oasis-cream);border-radius:var(--radius-sm);font-size:14px;color:var(--oasis-charcoal);line-height:1.6}
+
+.result-card{
+  text-align:center;padding:48px 32px;border-radius:var(--radius);
+  background:#fff;border:1px solid var(--oasis-line);
+}
+.result-pass{border-top:6px solid var(--oasis-success)}
+.result-fail{border-top:6px solid var(--oasis-error)}
+.result-score{font-family:var(--serif);font-size:84px;font-weight:300;line-height:1;color:var(--oasis-dark)}
+.result-score .pct-symbol{font-size:48px;color:var(--oasis-teal)}
+.result-status{margin-top:8px;font-size:12px;letter-spacing:.3em;text-transform:uppercase;font-weight:500}
+.result-status.pass{color:var(--oasis-success)}
+.result-status.fail{color:var(--oasis-error)}
+.result-title{font-family:var(--serif);font-size:34px;font-weight:400;margin-top:12px;color:var(--oasis-dark);letter-spacing:.02em}
+.result-msg{color:var(--oasis-gray);max-width:560px;margin:12px auto 24px}
+
+/* ========== Misc ========== */
+.toast{
+  position:fixed;left:50%;bottom:30px;transform:translateX(-50%);
+  background:var(--oasis-dark);color:#fff;padding:12px 18px;border-radius:999px;
+  font-size:13px;letter-spacing:.06em;box-shadow:var(--shadow-lg);z-index:200;
+  opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;
+}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(-6px)}
+
+.wave-decor{
+  display:block;width:100%;height:42px;
+  background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 42' preserveAspectRatio='none'><path d='M0 21 Q 150 0 300 21 T 600 21 T 900 21 T 1200 21 V42 H0 Z' fill='%234A9FBF' opacity='0.18'/><path d='M0 28 Q 150 8 300 28 T 600 28 T 900 28 T 1200 28 V42 H0 Z' fill='%23226683' opacity='0.22'/></svg>") repeat-x;
+  background-size:1200px 42px;
+}
+
+@media (max-width:680px){
+  .topbar{padding:12px 18px;flex-wrap:wrap;gap:10px}
+  .brand-tag{display:none}
+  .wrap{padding:24px 18px 60px}
+  .welcome-card{padding:34px 24px}
+  .welcome-title{font-size:34px}
+  .hero{padding:26px 22px}
+  .hero-title{font-size:30px}
+  .module-head{padding:22px 20px}
+  .section-card{padding:22px 20px}
+  .quiz-block{padding:22px 18px}
+  .exam-bar{position:static;padding:14px 16px}
+  .exam-bar .timer{font-size:24px;padding:4px 12px}
+  .exam-body{padding:22px 18px}
+  .result-score{font-size:64px}
+  .result-title{font-size:26px}
+}
+
+/* ========== Additional layout for v1 app logic ========== */
+.welcome-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:8px;margin-bottom:8px}
+.profile-list-label{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--oasis-gray);margin:18px 0 10px}
+.profile-chips{display:flex;flex-direction:column;gap:8px}
+.field-error{color:var(--oasis-error);font-size:13px;background:var(--oasis-error-bg);border:1px solid #f0c4bd;padding:10px 12px;border-radius:var(--radius-sm);margin-bottom:14px;text-align:left}
+
+.hero-row{display:flex;gap:38px;margin-top:22px;flex-wrap:wrap;position:relative;z-index:1}
+.hero-stat-num{font-family:var(--serif);font-weight:400;font-size:38px;line-height:1;color:#fff}
+.hero-stat-label{font-size:11px;letter-spacing:.22em;text-transform:uppercase;opacity:.78;margin-top:4px;color:rgba(255,255,255,.85)}
+.hero-cta{margin-top:24px;background:#fff;color:var(--oasis-dark);border-color:#fff;position:relative;z-index:1}
+.hero-cta:hover{background:var(--oasis-aqua-light);color:var(--oasis-dark);border-color:var(--oasis-aqua-light)}
+
+.section-h{font-family:var(--serif);font-weight:400;font-size:24px;letter-spacing:.04em;color:var(--oasis-dark);margin:30px 4px 18px}
+.modules-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:18px}
+.module-card{text-align:left;width:100%}
+.module-card-top{display:flex;align-items:center;justify-content:space-between}
+.module-num{font-family:var(--serif);font-size:13px;color:var(--oasis-teal);letter-spacing:.18em;text-transform:uppercase}
+.module-card-title{font-family:var(--serif);font-size:21px;font-weight:500;color:var(--oasis-dark);line-height:1.25}
+.module-card-meta{font-size:12.5px;color:var(--oasis-gray);letter-spacing:.04em}
+.badge.complete{background:var(--oasis-success-bg);color:var(--oasis-success)}
+.badge.progress{background:var(--oasis-aqua-light);color:var(--oasis-teal)}
+.badge.unlocked{background:#FCEDC9;color:#8C6A1F}
+.badge.locked{background:#EFEAE0;color:var(--oasis-gray)}
+
+.exam-card-body{flex:1;min-width:240px}
+.exam-sub{font-size:13.5px;opacity:.9;margin-top:6px;margin-bottom:16px;max-width:560px}
+.exam-card .btn-primary{background:#fff;color:var(--oasis-navy);border-color:#fff}
+.exam-card .btn-primary:hover{background:var(--oasis-aqua-light);color:var(--oasis-navy)}
+.exam-card.locked .btn-primary{display:none}
+
+.module-eyebrow{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--oasis-teal);margin-bottom:8px}
+.module-title{font-family:var(--serif);font-weight:400;font-size:34px;line-height:1.15;color:var(--oasis-dark);position:relative}
+.module-intro{margin-top:10px;color:var(--oasis-gray);max-width:760px;position:relative}
+.module-meta{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--oasis-gray);margin-top:10px}
+.module-nav{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap;justify-content:space-between}
+
+.section-card{position:relative}
+.section-num{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--oasis-teal);margin-bottom:6px}
+.section-card .section-title{font-family:var(--serif);font-weight:500;font-size:26px;letter-spacing:.02em;color:var(--oasis-dark);margin-bottom:12px;line-height:1.2;text-transform:none}
+.section-body{color:var(--oasis-charcoal);font-size:15.5px;line-height:1.75}
+.section-body p{margin-bottom:12px}
+.section-body ul,.section-body ol{margin:6px 0 14px 22px}
+.section-body li{margin-bottom:6px}
+.section-body strong{color:var(--oasis-dark)}
+.section-body code{background:var(--oasis-cream);padding:2px 6px;border-radius:4px;font-size:13.5px;font-family:Menlo,monospace}
+
+.quiz-sub{font-size:13.5px;color:var(--oasis-gray);margin-top:6px;margin-bottom:14px}
+.quiz-body{display:flex;flex-direction:column;gap:14px}
+.quiz-foot{display:flex;align-items:center;gap:14px;margin-top:16px;flex-wrap:wrap}
+.quiz-result{margin-top:16px;font-size:14px;color:var(--oasis-charcoal);width:100%}
+.q-text{font-weight:500;font-size:15.5px;color:var(--oasis-dark);margin-bottom:14px;line-height:1.45}
+.opt{text-align:left}
+.opt.selected{border-color:var(--oasis-teal);background:var(--oasis-aqua-light);color:var(--oasis-teal);font-weight:500}
+.opt.correct{border-color:var(--oasis-success);background:var(--oasis-success-bg);color:var(--oasis-success);font-weight:500}
+.opt.wrong{border-color:var(--oasis-error);background:var(--oasis-error-bg);color:var(--oasis-error);font-weight:500}
+.opt:disabled{cursor:default}
+.feedback.ok{background:var(--oasis-success-bg);color:var(--oasis-success);border-left:3px solid var(--oasis-success)}
+.feedback.bad{background:var(--oasis-error-bg);color:var(--oasis-error);border-left:3px solid var(--oasis-error)}
+
+/* Exam */
+.exam-bar-info{display:flex;flex-direction:column;gap:2px}
+.exam-bar-eye{font-size:11px;letter-spacing:.3em;text-transform:uppercase;opacity:.78}
+.exam-bar-q{font-family:var(--serif);font-weight:500;font-size:18px;letter-spacing:.02em}
+.exam-q{font-family:var(--serif);font-size:24px;font-weight:500;letter-spacing:.02em;color:var(--oasis-dark);line-height:1.3;margin-bottom:22px}
+.exam-opts{margin-bottom:22px}
+.exam-opts .opt{font-size:15.5px;padding:14px 16px}
+.exam-foot{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-top:8px}
+.exam-pager{display:flex;flex-wrap:wrap;gap:6px;flex:1;justify-content:center}
+.pgr{
+  width:34px;height:34px;border-radius:8px;border:1px solid var(--oasis-line);
+  background:#fff;color:var(--oasis-gray);font-size:12.5px;font-weight:500;
+  display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:all .15s;
+}
+.pgr:hover{border-color:var(--oasis-teal);color:var(--oasis-teal)}
+.pgr.answered{background:var(--oasis-aqua-light);border-color:var(--oasis-aqua);color:var(--oasis-navy)}
+.pgr.now{outline:2px solid var(--oasis-teal);outline-offset:2px}
+.exam-bar .btn-link{flex-shrink:0}
+
+/* Results */
+.result-card{text-align:center;padding:44px 32px;border-radius:var(--radius);background:#fff;border:1px solid var(--oasis-line);margin-bottom:30px}
+.result-card.pass{border-top:6px solid var(--oasis-success)}
+.result-card.fail{border-top:6px solid var(--oasis-error)}
+.result-eyebrow{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--oasis-teal);margin-bottom:12px}
+.result-card.fail .result-eyebrow{color:var(--oasis-error)}
+.result-card.pass .result-eyebrow{color:var(--oasis-success)}
+.result-meta{color:var(--oasis-gray);font-size:14px;margin-top:8px;margin-bottom:24px}
+.result-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+.review-list{display:flex;flex-direction:column;gap:14px}
+.review-q.ok{border-left:4px solid var(--oasis-success);background:#F4FAF6}
+.review-q.bad{border-left:4px solid var(--oasis-error);background:#FDF6F4}
+.review-num{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--oasis-gray);margin-bottom:6px;font-weight:500}
+.review-text{font-weight:500;color:var(--oasis-dark);margin-bottom:12px;line-height:1.4}
+.review-q .opts{margin-bottom:10px}
+.review-opt{padding:10px 14px;font-size:14.5px}
+.review-opt .your{font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-left:8px;opacity:.7}
+.review-q .feedback{font-size:14px;line-height:1.6}
+
+/* Welcome card forms */
+.welcome-card .field{margin-bottom:14px}
+.welcome-card select{padding:14px 16px;border:1px solid var(--oasis-line);border-radius:var(--radius-sm);background:#fff;width:100%;font-size:15px}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div class="brand">
+      <img src="https://oasis.ky/wp-content/uploads/2024/08/White-Wordmark-Logo-Oasis.png" alt="Oasis" class="brand-logo" onerror="this.style.display='none'">
+      <span class="brand-divider"></span>
+      <span class="brand-tag">CPO Exam Prep</span>
+    </div>
+    <nav class="topbar-nav" id="topnav"></nav>
+  </header>
+  <div class="wave-decor" aria-hidden="true"></div>
+  <main id="main"></main>
+  <footer class="footer">
+    <div class="footer-inner">
+      <img src="https://oasis.ky/wp-content/uploads/2024/08/Oasis_Logo_Icon_White-1024x910.png" alt="Oasis" class="footer-logo" onerror="this.style.display='none'">
+      <div>
+        <div class="footer-title">Powered by Oasis</div>
+        <div class="footer-sub">Luxury Pool &amp; Watershape Design — Cayman Islands · Study companion for the PHTA Certified Pool/Spa Operator® exam</div>
+      </div>
+    </div>
+  </footer>
+</div>
+<div id="toast" class="toast"></div>
+
+<script>
+"use strict";
+/* ============================================================
+   CPO Exam Prep — single-file app
+   Branding: Oasis.ky (charcoal #231F20, teal #226683, navy #1A405F)
+   Storage: localStorage key "cpo_app_v1"
+   ============================================================ */
+
+// ---------------- COURSE CONTENT ----------------
+const MODULES = [
+  // ============ MODULE 1: Water Chemistry ============
+  {
+    id:"m1",
+    title:"Pool & Spa Water Chemistry",
+    intro:"Master the four pillars of balanced water — pH, total alkalinity, calcium hardness, and total dissolved solids — and learn how to use the Langelier Saturation Index to keep water clear, comfortable, and non-corrosive.",
+    sections:[
+      {
+        title:"Why Water Balance Matters",
+        body:`<p>Water that is out of balance becomes a problem before it becomes a hazard. Eyes sting, surfaces etch, equipment scales, and chlorine works inefficiently or not at all. Balanced water keeps swimmers comfortable, sanitizers effective, and the facility's expensive plaster, grout, heaters, and metal components protected from premature failure.</p>
+        <p>The CPO is responsible for monitoring four chemical factors that, taken together, define balance:</p>
+        <ul>
+          <li><strong>pH</strong> — the acid/base activity of the water.</li>
+          <li><strong>Total Alkalinity (TA)</strong> — the water's resistance to pH change.</li>
+          <li><strong>Calcium Hardness (CH)</strong> — dissolved calcium content.</li>
+          <li><strong>Temperature</strong> and <strong>Total Dissolved Solids (TDS)</strong> — the environmental backdrop.</li>
+        </ul>
+        <p>Balance is judged using the <strong>Langelier Saturation Index (LSI)</strong>. A reading near zero means the water is neither aggressive (corrosive) nor scaling.</p>`
+      },
+      {
+        title:"pH — The Master Variable",
+        body:`<p>pH is a 0–14 logarithmic scale measuring how acidic or basic the water is. Pool water is held in a narrow window: <strong>7.2–7.8</strong>, with 7.4–7.6 ideal because it sits closest to the pH of the human eye (about 7.4) and keeps chlorine working efficiently.</p>
+        <p><strong>What happens outside the range:</strong></p>
+        <ul>
+          <li>pH below 7.2 — chlorine is overly aggressive, eyes burn, metal surfaces corrode, plaster etches.</li>
+          <li>pH above 7.8 — chlorine becomes sluggish, scale begins to form, water clouds, and sanitizer demand rises.</li>
+        </ul>
+        <p><strong>Adjusting pH:</strong></p>
+        <ul>
+          <li>To <em>raise</em> pH: sodium carbonate (soda ash) or sodium bicarbonate.</li>
+          <li>To <em>lower</em> pH: muriatic acid (hydrochloric acid) or sodium bisulfate (dry acid).</li>
+        </ul>
+        <p>Always pre-dilute liquid acid by adding acid to water (never water to acid), broadcast over the deepest part of the pool with the pump running, and re-test 30+ minutes after circulation.</p>`
+      },
+      {
+        title:"Total Alkalinity — The Buffer",
+        body:`<p>Total Alkalinity measures the carbonate, bicarbonate, and hydroxide ions in the water. TA acts as a chemical shock absorber that keeps pH stable. Without enough TA, pH bounces around with every chemical addition or rainfall (called &ldquo;pH bounce&rdquo;). With too much TA, pH drifts upward and locks in place (&ldquo;pH lock&rdquo;).</p>
+        <p><strong>Ideal range:</strong> 80–120 ppm (60–180 ppm acceptable, depending on sanitizer).</p>
+        <ul>
+          <li>To raise TA: <strong>sodium bicarbonate</strong> (baking soda).</li>
+          <li>To lower TA: muriatic acid or sodium bisulfate, added in slugs to the deepest point with the pump <em>off</em> for ~1 hour, then circulated.</li>
+        </ul>
+        <p>When using cyanuric acid (CYA) as a stabilizer, the &ldquo;adjusted&rdquo; TA is what matters. Carbonate alkalinity = Total Alkalinity – (CYA × correction factor).</p>`
+      },
+      {
+        title:"Calcium Hardness, TDS & Temperature",
+        body:`<p><strong>Calcium Hardness (CH)</strong> measures dissolved calcium. Too little CH and water becomes &ldquo;hungry,&rdquo; pulling calcium out of plaster, grout, and concrete. Too much CH and the water scales onto heaters, salt cells, tile lines, and filter media.</p>
+        <p><strong>Ideal range for pools:</strong> 200–400 ppm (150–250 ppm for spas, where higher temperatures accelerate scale).</p>
+        <ul>
+          <li>To raise CH: <strong>calcium chloride</strong> (do not pre-mix in metal containers — it reacts exothermically).</li>
+          <li>To lower CH: partial drain and refill with softer water; chemical removal is rarely practical.</li>
+        </ul>
+        <p><strong>Total Dissolved Solids (TDS)</strong> is the sum of every dissolved mineral, salt, and chemical residue. Maximum recommended TDS is 1500 ppm above the source water's starting TDS. High TDS dulls sanitizer effectiveness, can corrode metal fittings, and may cause cloudy water that no chemical can fix. The only effective treatment is dilution by partial drain and refill.</p>
+        <p><strong>Water temperature</strong> drives chemical reactions. Warmer water = faster sanitizer demand, faster scale formation, and a higher LSI value. Spa water (typically 100–104 °F) requires more frequent testing than pool water and tighter chemistry control.</p>`
+      },
+      {
+        title:"Langelier Saturation Index (LSI)",
+        body:`<p>The LSI predicts whether water will scale or corrode by combining pH, temperature, calcium hardness, alkalinity, and TDS into a single number.</p>
+        <p><strong>Formula:</strong> LSI = pH + TF + CF + AF − TDSF</p>
+        <ul>
+          <li><strong>TF</strong> — temperature factor (lookup table)</li>
+          <li><strong>CF</strong> — calcium hardness factor (lookup table)</li>
+          <li><strong>AF</strong> — adjusted alkalinity factor (lookup table)</li>
+          <li><strong>TDSF</strong> — TDS constant (12.1 if TDS &lt; 1000 ppm; 12.2 if higher)</li>
+        </ul>
+        <p><strong>Reading the index:</strong></p>
+        <ul>
+          <li><strong>−0.3 to +0.3</strong> — balanced water (target).</li>
+          <li>Negative number — corrosive (aggressive); etching, pitting, dissolved metals.</li>
+          <li>Positive number — scaling; calcium deposits on heaters, surfaces, and tile lines.</li>
+        </ul>
+        <p>Practical takeaway: most CPO problems show up as drift in pH or alkalinity. Catching them early — via daily testing — keeps the LSI inside the safe band without needing dramatic chemical interventions.</p>`
+      },
+      {
+        title:"Stabilizer (Cyanuric Acid)",
+        body:`<p>UV radiation from sunlight destroys free chlorine quickly. Outdoors, an unstabilized pool can lose 90% of its free chlorine within two hours of midday sun. <strong>Cyanuric acid (CYA)</strong> — also called &ldquo;stabilizer&rdquo; or &ldquo;conditioner&rdquo; — bonds reversibly with chlorine to shield it from UV, dramatically extending its working life.</p>
+        <p><strong>Ideal CYA range:</strong> 30–50 ppm for outdoor pools (some health codes cap CYA at 100 ppm). Indoor pools generally do <em>not</em> need CYA.</p>
+        <p>Trade-off: CYA also <em>slows</em> chlorine's ability to kill pathogens. As a rule of thumb, free chlorine should be at least 7.5% of the CYA reading (the &ldquo;FC/CYA ratio&rdquo;). Excess CYA (&gt;100 ppm) is removed only by partial drain and refill.</p>
+        <p>Trichlor tablets and dichlor granular shock both add CYA every time they are used. Operators tracking CYA creep on a stabilized pool should plan for periodic dilution.</p>`
+      }
+    ],
+    miniQuizzes:[
+      {
+        afterSection:2,
+        title:"Mini Quiz — pH & Alkalinity",
+        questions:[
+          {q:"The ideal pH range for a swimming pool is:", a:["6.8 – 7.2","7.2 – 7.8","7.8 – 8.4","8.0 – 8.6"], c:1, e:"PHTA's recommended pH range is 7.2 – 7.8, with 7.4 – 7.6 considered ideal because it matches the pH of the human eye and maximizes chlorine efficiency."},
+          {q:"Which chemical is most commonly used to raise total alkalinity?", a:["Sodium carbonate (soda ash)","Sodium bicarbonate (baking soda)","Calcium chloride","Muriatic acid"], c:1, e:"Sodium bicarbonate is the standard chemical for raising total alkalinity. Soda ash also raises alkalinity but is primarily used to raise pH."},
+          {q:"What is likely to happen when total alkalinity exceeds 180 ppm?", a:["pH bounce","pH lock","Algae bloom","Chlorine spike"], c:1, e:"High alkalinity locks pH at high levels — &lsquo;pH lock&rsquo; — and makes adjustments very difficult. The water also tends to scale."},
+          {q:"To lower pH in a pool, you would typically add:", a:["Sodium bicarbonate","Calcium hypochlorite","Muriatic acid","Soda ash"], c:2, e:"Muriatic acid (or dry acid / sodium bisulfate) is added to lower pH. Soda ash and bicarb both raise pH or alkalinity."},
+          {q:"pH measures:", a:["Sanitizer strength","Hardness of the water","Acidity or basicity of the water","Total dissolved solids"], c:2, e:"pH is a 0–14 scale measuring the hydrogen ion activity — how acidic or basic the water is."}
+        ]
+      },
+      {
+        afterSection:5,
+        title:"Mini Quiz — Hardness, TDS & LSI",
+        questions:[
+          {q:"The recommended calcium hardness range for a swimming pool is:", a:["50 – 150 ppm","100 – 200 ppm","200 – 400 ppm","400 – 600 ppm"], c:2, e:"PHTA recommends 200–400 ppm for pools. Spas are kept lower (150–250 ppm) because heat accelerates scale."},
+          {q:"A Langelier Saturation Index of −0.8 indicates water that is:", a:["Balanced","Corrosive","Scaling","Sanitized"], c:1, e:"Negative LSI values indicate corrosive (aggressive) water that will etch plaster and dissolve metals."},
+          {q:"Cyanuric acid is used to:", a:["Raise pH","Reduce hardness","Protect chlorine from UV degradation","Sanitize the pool"], c:2, e:"Cyanuric acid is a stabilizer/conditioner. It bonds with chlorine to shield it from UV breakdown in outdoor pools."},
+          {q:"To lower TDS in a pool you must:", a:["Add a clarifier","Run the filter longer","Partially drain and refill","Shock with chlorine"], c:2, e:"There is no chemical that removes TDS. Dilution by partial drain and refill is the only effective method."},
+          {q:"For an outdoor pool, the recommended cyanuric acid range is:", a:["0 – 10 ppm","30 – 50 ppm","100 – 150 ppm","Over 200 ppm"], c:1, e:"30–50 ppm is ideal. Most health codes cap CYA at 100 ppm because higher levels reduce chlorine effectiveness."}
+        ]
+      }
+    ],
+    completionQuiz:{
+      title:"Module 1 Completion Quiz — Water Chemistry",
+      questions:[
+        {q:"Which factor most influences the activity of free chlorine?", a:["Total dissolved solids","pH","Calcium hardness","Total alkalinity"], c:1, e:"Free chlorine effectiveness drops dramatically as pH rises. At pH 8.0, less than 25% of free chlorine exists in the active hypochlorous acid form."},
+        {q:"The ideal total alkalinity range for a chlorine-sanitized pool is:", a:["20 – 60 ppm","80 – 120 ppm","150 – 200 ppm","250 – 300 ppm"], c:1, e:"80 – 120 ppm is the ideal carbonate alkalinity range. It buffers pH without causing scale or pH lock."},
+        {q:"You test pH at 7.9 and TA at 110 ppm. What is the best correction?", a:["Add soda ash","Add muriatic acid","Add calcium chloride","Add bicarbonate"], c:1, e:"pH is too high; TA is in range. Adding muriatic acid will lower pH with only a small effect on TA at this level."},
+        {q:"A pool with calcium hardness of 80 ppm is most likely to:", a:["Scale heater elements","Etch plaster surfaces","Cloud the water","Stain the bottom green"], c:1, e:"Low calcium makes water aggressive — it dissolves calcium from plaster and grout, etching surfaces."},
+        {q:"Which chemical, added directly to the pool surface, can bleach the liner or damage plaster?", a:["Calcium chloride","Sodium bicarbonate","Calcium hypochlorite (granular)","Cyanuric acid"], c:2, e:"Granular cal-hypo can bleach vinyl liners and burn plaster if not pre-dissolved or broadcast properly."},
+        {q:"The Langelier Saturation Index combines all of the following EXCEPT:", a:["pH","Calcium hardness","Cyanuric acid","Temperature"], c:2, e:"LSI uses pH, temperature, calcium hardness, alkalinity, and TDS — not CYA."},
+        {q:"In a stabilized outdoor pool, free chlorine should generally be at least:", a:["1% of CYA","7.5% of CYA","25% of CYA","Equal to CYA"], c:1, e:"The widely-used FC/CYA ratio recommends free chlorine of at least about 7.5% of the cyanuric acid level for adequate disinfection."},
+        {q:"Which of the following is the safe procedure when adding muriatic acid?", a:["Pour acid into a bucket of pool water, then broadcast","Pour water into the acid container","Pour acid directly down the skimmer","Add it dry to the deep end"], c:0, e:"Always add ACID TO WATER (never water to acid) and broadcast over the deep end with the pump running."},
+        {q:"Maximum recommended TDS above source water is approximately:", a:["500 ppm","1500 ppm","3000 ppm","6000 ppm"], c:1, e:"PHTA recommends TDS not exceed 1500 ppm above the source water's starting TDS."},
+        {q:"To safely raise calcium hardness you would add:", a:["Sodium bicarbonate","Calcium chloride","Muriatic acid","Soda ash"], c:1, e:"Calcium chloride is the standard product for raising calcium hardness. It should never be pre-dissolved in a metal container due to heat release."}
+      ]
+    }
+  },
+
+  // ============ MODULE 2: Disinfection & Sanitizers ============
+  {
+    id:"m2",
+    title:"Disinfection & Sanitizers",
+    intro:"Understand how chlorine and alternative sanitizers actually kill pathogens, the difference between free, combined, and total chlorine, and how to manage breakpoint chlorination, oxidation, and supplemental systems like UV and ozone.",
+    sections:[
+      {
+        title:"How Chlorine Disinfects",
+        body:`<p>Every chlorine product, regardless of form, dissolves in water to release <strong>hypochlorous acid (HOCl)</strong> — the active disinfecting molecule. HOCl is small, neutrally charged, and able to penetrate microbial cell walls, where it destroys enzymes and proteins.</p>
+        <p>HOCl exists in equilibrium with the much weaker <strong>hypochlorite ion (OCl⁻)</strong>. The split between the two is governed almost entirely by pH:</p>
+        <ul>
+          <li>At pH 7.0 — about 75% HOCl (very active)</li>
+          <li>At pH 7.5 — about 50% HOCl (good balance)</li>
+          <li>At pH 8.0 — about 22% HOCl (sluggish)</li>
+        </ul>
+        <p>This is why pH control isn't a separate task from sanitation — pH <em>is</em> sanitation control. A pool with 2 ppm chlorine at pH 7.4 is far more effective than a pool with 4 ppm chlorine at pH 8.0.</p>`
+      },
+      {
+        title:"Free, Combined & Total Chlorine",
+        body:`<p>Three chlorine readings are reported on every test:</p>
+        <ul>
+          <li><strong>Free chlorine (FC)</strong> — HOCl + OCl⁻; the disinfecting reserve.</li>
+          <li><strong>Combined chlorine (CC, &ldquo;chloramines&rdquo;)</strong> — chlorine that has reacted with ammonia/nitrogen from sweat, urine, body oils. Weak disinfectants and the source of the &ldquo;chlorine smell&rdquo; and red eyes.</li>
+          <li><strong>Total chlorine (TC)</strong> — FC + CC.</li>
+        </ul>
+        <p><strong>Targets:</strong> FC 1–4 ppm in pools (2–4 ppm typical); 3–5 ppm in spas. CC should be kept &lt; 0.4 ppm (some health codes require &lt; 0.2 ppm).</p>
+        <p>To find combined chlorine: <code>CC = TC − FC</code>.</p>`
+      },
+      {
+        title:"Breakpoint Chlorination & Shocking",
+        body:`<p>To destroy chloramines you must &ldquo;shock&rdquo; the pool past the <strong>breakpoint</strong> — the chlorine concentration at which combined chlorine is oxidized into harmless gases.</p>
+        <p><strong>Rule of thumb:</strong> Add free chlorine equal to 10× the combined chlorine reading to reach breakpoint.</p>
+        <p>Example: CC = 0.6 ppm → shock to FC of 6 ppm above current level.</p>
+        <p>Common shock products:</p>
+        <ul>
+          <li><strong>Calcium hypochlorite</strong> — 65–73% available chlorine; raises CH; broadcast over deep end.</li>
+          <li><strong>Sodium hypochlorite (liquid bleach)</strong> — 10–12.5% available chlorine; raises pH slightly; no CH increase.</li>
+          <li><strong>Dichlor</strong> — 56–62% available chlorine; adds CYA; near-neutral pH.</li>
+          <li><strong>Non-chlorine shock (potassium monopersulfate)</strong> — oxidizer only; does not destroy pathogens but breaks down combined chlorine.</li>
+        </ul>
+        <p>Shock late in the day, with pumps running, and keep swimmers out until FC returns to ≤ 4 ppm.</p>`
+      },
+      {
+        title:"Chlorine Source Comparison",
+        body:`<p>The CPO must be able to evaluate chlorine products by available chlorine, pH effect, stabilizer content, and storage hazards.</p>
+        <ul>
+          <li><strong>Trichlor (tablets, sticks)</strong> — 90% available; very acidic (pH ~2.8); adds CYA.</li>
+          <li><strong>Dichlor (granular)</strong> — 56–62% available; near-neutral; adds CYA.</li>
+          <li><strong>Cal-hypo</strong> — 65–73%; basic (pH ~11.7); adds CH; do NOT mix with trichlor.</li>
+          <li><strong>Liquid bleach (sodium hypo)</strong> — 10–12.5%; basic (pH ~13); short shelf life; degrades in heat.</li>
+          <li><strong>Lithium hypochlorite</strong> — 35%; basic; expensive; dissolves quickly.</li>
+          <li><strong>Salt-chlorine generators</strong> — produce chlorine on-site by electrolysis of dissolved salt (3,000–4,000 ppm); near-neutral effect; require regular cell cleaning.</li>
+        </ul>
+        <p><strong>Critical safety rule:</strong> Never mix chlorine types in storage or feeders. Trichlor + cal-hypo can ignite, even from trace contamination.</p>`
+      },
+      {
+        title:"Bromine, UV, Ozone & Alternative Sanitizers",
+        body:`<p><strong>Bromine</strong> is widely used in spas because it is more stable in hot water and combined bromine (bromamines) remains an effective disinfectant. Range: 3–5 ppm in spas, 2–4 ppm in pools. Bromine cannot be stabilized with CYA.</p>
+        <p><strong>UV systems</strong> pass water through a chamber illuminated by UV-C lamps that destroy DNA in pathogens — including chlorine-resistant <em>Cryptosporidium</em>. UV is a supplemental system; a chlorine residual is still required in the pool.</p>
+        <p><strong>Ozone (O₃)</strong> is a powerful oxidizer generated on-site, injected, and then off-gassed before water returns to the pool. Like UV, ozone supplements chlorine — it does not replace the residual.</p>
+        <p><strong>Mineral / copper-silver systems</strong> reduce — but do not eliminate — the need for chlorine. They are bacteriostatic, not bactericidal at the speeds health codes require.</p>
+        <p>For aquatic facilities serving the public, U.S. health codes universally require an EPA-registered residual sanitizer (chlorine or bromine) regardless of supplemental systems.</p>`
+      }
+    ],
+    miniQuizzes:[
+      {
+        afterSection:2,
+        title:"Mini Quiz — Chlorine Chemistry",
+        questions:[
+          {q:"The active disinfecting form of chlorine is:", a:["Hypochlorite ion (OCl⁻)","Hypochlorous acid (HOCl)","Cyanuric acid","Calcium chloride"], c:1, e:"HOCl is the small, neutrally-charged molecule that penetrates microbial cell walls. OCl⁻ is much weaker."},
+          {q:"Combined chlorine (chloramines) form when chlorine reacts with:", a:["Calcium","Cyanuric acid","Ammonia and nitrogen compounds","Carbon dioxide"], c:2, e:"Chloramines form when chlorine combines with ammonia/nitrogen waste from swimmers — sweat, urine, body oils."},
+          {q:"At pH 8.0, the percentage of free chlorine in HOCl form is approximately:", a:["75%","50%","22%","5%"], c:2, e:"At pH 8.0, only ~22% of free chlorine exists as active HOCl. This is why pH control directly affects sanitation."},
+          {q:"If total chlorine is 3.0 ppm and free chlorine is 2.4 ppm, combined chlorine is:", a:["0.0 ppm","0.6 ppm","2.4 ppm","5.4 ppm"], c:1, e:"Combined chlorine = Total − Free = 3.0 − 2.4 = 0.6 ppm."},
+          {q:"PHTA's recommended free chlorine range for a pool is:", a:["0.2 – 0.5 ppm","1 – 4 ppm","5 – 10 ppm","10 – 20 ppm"], c:1, e:"1–4 ppm free chlorine is the standard pool range. Spas are typically 3–5 ppm due to higher temperature."}
+        ]
+      },
+      {
+        afterSection:4,
+        title:"Mini Quiz — Shocking & Chlorine Sources",
+        questions:[
+          {q:"To reach breakpoint chlorination, free chlorine must be raised to roughly:", a:["2× combined chlorine","5× combined chlorine","10× combined chlorine","20× combined chlorine"], c:2, e:"Breakpoint requires approximately 10× the combined chlorine reading to fully oxidize chloramines."},
+          {q:"Which chlorine product also adds cyanuric acid to the pool?", a:["Calcium hypochlorite","Sodium hypochlorite","Trichlor","Lithium hypochlorite"], c:2, e:"Trichlor (and dichlor) are stabilized chlorine products — they add CYA every time they are used."},
+          {q:"Mixing trichlor and calcium hypochlorite in a feeder can cause:", a:["Cloudy water","Fire or explosion","Algae","Excess CYA"], c:1, e:"Mixing chlorine types — especially trichlor + cal-hypo — can ignite or detonate. Never mix or share feeders."},
+          {q:"Which chlorine product is most likely to lower pH significantly?", a:["Sodium hypochlorite","Trichlor","Calcium hypochlorite","Lithium hypochlorite"], c:1, e:"Trichlor is highly acidic (pH ~2.8) and noticeably depresses pool pH. Cal-hypo and liquid bleach are basic."}
+        ]
+      }
+    ],
+    completionQuiz:{
+      title:"Module 2 Completion Quiz — Disinfection",
+      questions:[
+        {q:"The disinfecting form of chlorine in pool water is:", a:["Hypochlorite ion","Calcium hypochlorite","Hypochlorous acid","Cyanuric acid"], c:2, e:"Hypochlorous acid (HOCl) is the small, neutral molecule that actually kills pathogens."},
+        {q:"Free chlorine + combined chlorine equals:", a:["Available chlorine","Total chlorine","Breakpoint chlorine","Active chlorine"], c:1, e:"FC + CC = Total Chlorine. The difference between TC and FC is the combined chlorine."},
+        {q:"Breakpoint chlorination is intended to:", a:["Reduce pH","Destroy chloramines","Add stabilizer","Lower hardness"], c:1, e:"Breakpoint shocks the pool past the level where chloramines are oxidized into harmless gases."},
+        {q:"Which sanitizer is most commonly used in spas?", a:["Cyanuric acid","Bromine","Lithium hypochlorite","Soda ash"], c:1, e:"Bromine is preferred for spas because it is more stable in hot water and bromamines remain effective sanitizers."},
+        {q:"Salt-chlorine generators produce chlorine via:", a:["Adding bleach automatically","Electrolysis of dissolved salt","UV reaction","Ion exchange"], c:1, e:"A salt cell uses electricity to convert dissolved sodium chloride into hypochlorous acid in the return line."},
+        {q:"Cyanuric acid is sometimes called:", a:["Stabilizer or conditioner","Soda ash","Calcium booster","pH increaser"], c:0, e:"CYA is widely sold as &lsquo;stabilizer&rsquo; or &lsquo;conditioner.&rsquo; It protects free chlorine from UV destruction."},
+        {q:"UV systems are best described as:", a:["A residual sanitizer that replaces chlorine","A supplemental disinfection system","A pH control method","A filtration system"], c:1, e:"UV is supplemental: it inactivates pathogens passing through the chamber but leaves no residual. A chlorine residual is still required."},
+        {q:"At which pH is chlorine most effective as a sanitizer?", a:["6.5","7.0","8.0","8.5"], c:1, e:"At pH 7.0, ~75% of free chlorine is in the active HOCl form. Pools are kept at 7.2–7.8 to balance bather comfort and equipment protection."},
+        {q:"The recommended maximum combined chlorine is generally:", a:["0.4 ppm","1.0 ppm","3.0 ppm","No limit"], c:0, e:"Most health codes require combined chlorine below 0.4 ppm, with some codes setting the limit at 0.2 ppm."},
+        {q:"Which of the following best resists destruction by chlorine?", a:["E. coli","Norovirus","Cryptosporidium parvum","Pseudomonas aeruginosa"], c:2, e:"Cryptosporidium has a hard outer shell (oocyst) and resists normal chlorination. UV systems are the standard supplemental defense."}
+      ]
+    }
+  },
+
+  // ============ MODULE 3: Pool Filtration Systems ============
+  {
+    id:"m3",
+    title:"Pool Filtration Systems",
+    intro:"Filtration removes the particles sanitizers can't oxidize. The CPO must understand sand, cartridge, and DE filter operation, turnover rate, flow management, and the indicators that tell you when to backwash, clean, or recharge each type.",
+    sections:[
+      {
+        title:"Why Filtration Matters",
+        body:`<p>Sanitizers kill living organisms; <strong>filtration removes the dead bodies, debris, dust, oils, and lotion residue</strong> that make water cloudy and consume chlorine. A pool that fails its turbidity check almost always has a filtration problem, not a chemistry problem.</p>
+        <p>Three main filter types are used in commercial pools: <strong>sand</strong>, <strong>cartridge</strong>, and <strong>diatomaceous earth (DE)</strong>. Each filters down to a different particle size and is cleaned by a different method.</p>`
+      },
+      {
+        title:"Sand Filters",
+        body:`<p>The most common commercial filter type. Water is forced down through a bed of #20 silica sand. Particles ~20–25 microns and larger are trapped.</p>
+        <ul>
+          <li><strong>Design flow:</strong> 15 gpm/sq ft (high-rate); 3 gpm/sq ft (rapid, older).</li>
+          <li><strong>Cleaning:</strong> reverse the flow ("backwash") to lift and rinse the sand bed when pressure rises 8–10 psi above clean baseline.</li>
+          <li><strong>Sand replacement:</strong> every 5–7 years, or when channels form and filtration suffers.</li>
+        </ul>
+        <p>Adding a small amount of <strong>filter aid</strong> (DE or polymer) can boost particle capture down to ~5 microns. Sand filters are tolerant, forgiving, and require minimal labor — but use the most water for cleaning (200–500 gallons per backwash).</p>`
+      },
+      {
+        title:"Cartridge Filters",
+        body:`<p>Pleated polyester cartridges trap particles ~10–15 microns. Cleaning is manual: shut down, remove, hose off, optionally degrease/acid-soak.</p>
+        <ul>
+          <li><strong>Design flow:</strong> ≤ 0.375 gpm/sq ft (commercial), with most designs in the 0.25–0.375 range.</li>
+          <li><strong>No backwash water</strong> — major water savings.</li>
+          <li>Replace cartridges every 1–3 years depending on bather load.</li>
+        </ul>
+        <p>Cartridges shine in regions with water restrictions and on small-to-medium commercial pools where the labor of manual cleaning is acceptable.</p>`
+      },
+      {
+        title:"DE (Diatomaceous Earth) Filters",
+        body:`<p>DE filters provide the finest filtration available — down to ~3–5 microns — using a coating of fossilized diatom skeletons (DE powder) on cloth or grid elements.</p>
+        <ul>
+          <li><strong>Design flow:</strong> ≤ 2 gpm/sq ft.</li>
+          <li><strong>Cleaning:</strong> backwash, then re-coat (&ldquo;precoat&rdquo;) the grids with fresh DE through the skimmer.</li>
+          <li>Some health codes require DE backwash water be discharged through a separation tank to avoid releasing DE into sewers/storm drains.</li>
+        </ul>
+        <p>DE provides the cleanest water but requires more operator attention, careful precoating, and respiratory protection (DE dust is a known lung irritant — handle with N95 mask).</p>`
+      },
+      {
+        title:"Turnover Rate & Flow Management",
+        body:`<p>The <strong>turnover rate</strong> is the time required for the filtration system to circulate a volume of water equal to the entire pool volume.</p>
+        <p><strong>Required turnover (PHTA / MAHC defaults):</strong></p>
+        <ul>
+          <li>Pools — 6 hours or less</li>
+          <li>Wading pools — 1 hour</li>
+          <li>Spas — 30 minutes</li>
+          <li>Spray pads — 30 seconds (continuous)</li>
+        </ul>
+        <p><strong>Required flow rate (gpm) = Pool volume (gal) ÷ (Turnover time in hours × 60)</strong>. Example: a 60,000-gallon pool with 6-hour turnover needs 60,000 / (6 × 60) = 167 gpm.</p>
+        <p>Use the filter pressure gauge (pre-filter) and flow meter to monitor performance. Backwash sand/DE when pressure rises 8–10 psi above clean baseline; clean cartridges on the same trigger.</p>`
+      },
+      {
+        title:"Backwashing Procedure & Common Problems",
+        body:`<p><strong>Sand filter backwash steps:</strong></p>
+        <ol>
+          <li>Shut off pump.</li>
+          <li>Move multiport valve to BACKWASH (never with pump running).</li>
+          <li>Restart pump; backwash 2–3 minutes (or until sight glass runs clear).</li>
+          <li>Shut off pump; valve to RINSE; run 30 seconds.</li>
+          <li>Shut off pump; valve to FILTER; restart.</li>
+        </ol>
+        <p><strong>Common problems:</strong> Channeling (water bypasses sand) — replace sand. Mudballing (clumped wet sand) — chemically clean or replace. Calcium scale — acid-clean. Rising pressure with no debris — undersized pump or restricted return.</p>`
+      }
+    ],
+    miniQuizzes:[
+      {
+        afterSection:2,
+        title:"Mini Quiz — Sand Filters",
+        questions:[
+          {q:"A sand filter typically traps particles down to:", a:["1 micron","5 microns","20 microns","100 microns"], c:2, e:"Sand filters reach about 20–25 microns. Adding DE or polymer filter aid can improve this to ~5 microns."},
+          {q:"You should backwash a sand filter when pressure rises:", a:["1–2 psi over clean baseline","8–10 psi over clean baseline","20+ psi over clean baseline","Pressure does not matter"], c:1, e:"The standard trigger is 8–10 psi above the clean operating pressure."},
+          {q:"High-rate sand filter design flow is:", a:["1 gpm/sq ft","3 gpm/sq ft","15 gpm/sq ft","45 gpm/sq ft"], c:2, e:"High-rate sand operates at up to 15 gpm/sq ft. Older &lsquo;rapid&rsquo; designs operate at ~3 gpm/sq ft."},
+          {q:"Sand should typically be replaced every:", a:["1 year","5–7 years","20 years","Never"], c:1, e:"Most operators plan to replace #20 silica sand every 5–7 years, sooner if channels form."}
+        ]
+      },
+      {
+        afterSection:5,
+        title:"Mini Quiz — Filtration Math & DE",
+        questions:[
+          {q:"Which filter type provides the finest particle removal?", a:["Sand","Cartridge","Diatomaceous earth (DE)","All equal"], c:2, e:"DE filters trap particles down to ~3–5 microns, finer than cartridge or sand."},
+          {q:"Required flow for a 60,000-gallon pool with a 6-hour turnover is approximately:", a:["100 gpm","167 gpm","250 gpm","600 gpm"], c:1, e:"60,000 / (6 × 60) = 167 gpm."},
+          {q:"PHTA's standard maximum turnover for a public pool is:", a:["1 hour","6 hours","12 hours","24 hours"], c:1, e:"Public pools default to a 6-hour turnover. Spas are 30 minutes; wading pools are 1 hour."},
+          {q:"Which filter type has the lowest backwash water consumption?", a:["Sand","Cartridge","DE","All equal"], c:1, e:"Cartridge filters do not backwash — they are removed and rinsed manually, saving hundreds of gallons per cleaning."}
+        ]
+      }
+    ],
+    completionQuiz:{
+      title:"Module 3 Completion Quiz — Filtration",
+      questions:[
+        {q:"The standard turnover rate for a public swimming pool is:", a:["1 hour","6 hours","12 hours","24 hours"], c:1, e:"Most jurisdictions require a turnover of 6 hours or less for public pools."},
+        {q:"A spa's required turnover under MAHC is:", a:["6 hours","2 hours","1 hour","30 minutes"], c:3, e:"Spas require a 30-minute turnover because of much heavier organic load per gallon."},
+        {q:"To find required gpm: pool volume ÷ (turnover hours × ___):", a:["10","60","100","3600"], c:1, e:"Multiplying turnover hours by 60 converts hours to minutes for gpm."},
+        {q:"You change the multiport valve while the pump is running. What is most likely to happen?", a:["Nothing","Damage to the multiport spider gasket","The filter media will be cleaned","The chlorinator will shut off"], c:1, e:"Always shut off the pump before changing valve positions; doing so under pressure damages the spider gasket."},
+        {q:"DE backwash water often must be discharged via a:", a:["Skimmer","Storm drain","Separation tank","Solar cover"], c:2, e:"DE creates milky discharge that can clog sewers; many jurisdictions require a separation tank."},
+        {q:"A cartridge filter is best cleaned by:", a:["Backwashing","Removing and hosing off","Adding more DE","Adding sand"], c:1, e:"Cartridges are cleaned manually by removal and hosing, optionally followed by chemical soak."},
+        {q:"Filter pressure rising rapidly may indicate:", a:["Healthy filtration","High flow with debris loading","Low chlorine","High pH"], c:1, e:"Rising filter pressure means accumulated debris and reduced flow — backwash or clean."},
+        {q:"Which filter type generally requires the most water for cleaning?", a:["Cartridge","DE","Sand","Tank"], c:2, e:"Sand filter backwashing uses the most water — typically 200–500 gallons per backwash cycle."},
+        {q:"Filter aid (small amount of DE) is sometimes added to:", a:["Cartridge filters","Sand filters","Spa heaters","Chemical feeders"], c:1, e:"DE or polymer filter aid coats sand to enhance filtration to ~5 microns."},
+        {q:"PPE for handling DE powder includes:", a:["Steel-toe boots only","N95 respirator","Welding mask","No PPE needed"], c:1, e:"DE dust is a known respiratory hazard; an N95 mask (or better) and gloves are standard."}
+      ]
+    }
+  },
+
+  // ============ MODULE 4: Pool Operations & Maintenance ============
+  {
+    id:"m4",
+    title:"Pool Operations & Maintenance",
+    intro:"Daily operations turn classroom chemistry into clean, safe water. This module covers test kits, recordkeeping, calibration, brushing and vacuuming routines, contamination response, and the operational rhythm that prevents problems before they occur.",
+    sections:[
+      {
+        title:"Test Kits & Daily Testing",
+        body:`<p>The CPO is the data scientist of the pool deck — a small notebook of daily readings is the most powerful prevention tool you have.</p>
+        <p><strong>Approved test methods (in order of accuracy):</strong></p>
+        <ul>
+          <li><strong>DPD with photometer</strong> — most accurate; reads free, combined, and total chlorine to 0.1 ppm.</li>
+          <li><strong>DPD with color comparator</strong> — standard for routine testing; affordable and reliable.</li>
+          <li><strong>OTO (orthotolidine)</strong> — measures total chlorine only; older method, less precise.</li>
+          <li><strong>Test strips</strong> — fast, screening only; not adequate as the sole compliance test.</li>
+        </ul>
+        <p><strong>Required testing frequency:</strong> Free/combined chlorine and pH every 2–4 hours during operation; alkalinity, calcium hardness, and CYA weekly. Spa testing should be at least every 2 hours.</p>
+        <p>Reagents are dated — a DPD reagent older than 12 months loses sensitivity and gives false-low readings. Replace annually and store cool/dark.</p>`
+      },
+      {
+        title:"Recordkeeping & Documentation",
+        body:`<p>Every public-pool jurisdiction requires a <strong>daily operations log</strong> retained for inspection, often for 3–5 years. Required entries typically include:</p>
+        <ul>
+          <li>Free chlorine, combined chlorine, pH (each test)</li>
+          <li>Bather load and operating hours</li>
+          <li>Chemicals added (type, quantity, time)</li>
+          <li>Cleaning, vacuuming, backwashing notes</li>
+          <li>Equipment problems / corrective actions</li>
+          <li>Contamination events and response steps</li>
+        </ul>
+        <p>Logs are protective — they document compliance, defend against liability, and surface drift before it becomes failure. Use a bound notebook, locked spreadsheet, or commercial pool-management software; loose pages are easily lost.</p>`
+      },
+      {
+        title:"Brushing, Vacuuming & Surface Care",
+        body:`<p>Even with perfect chemistry and filtration, biofilm forms on tile lines, ladders, and steps. Manual care is non-negotiable.</p>
+        <ul>
+          <li><strong>Brush walls and floor</strong> daily for plaster, weekly for vinyl/fiberglass. Use a stiff brush on plaster, soft only on vinyl.</li>
+          <li><strong>Vacuum</strong> as needed — daily for high-debris environments, weekly minimum.</li>
+          <li><strong>Skimmer baskets:</strong> empty daily; pump baskets at least weekly.</li>
+          <li><strong>Tile line:</strong> wipe with mild detergent or specialty tile cleaner monthly to prevent calcium scale buildup.</li>
+        </ul>
+        <p>Algae prevention starts with circulation. Brush dead zones — corners, behind ladders, deep-end transitions — where chlorine doesn't reach as effectively.</p>`
+      },
+      {
+        title:"Contamination Response (Fecal & Vomit)",
+        body:`<p>Health codes set explicit response procedures for contamination. PHTA and CDC published the &ldquo;Healthy Swimming&rdquo; protocols that most jurisdictions adopt.</p>
+        <p><strong>Formed-stool fecal accident:</strong></p>
+        <ol>
+          <li>Close the affected pool.</li>
+          <li>Remove the stool with a net (do not vacuum).</li>
+          <li>Disinfect the net.</li>
+          <li>Raise FC to 2 ppm at pH 7.5; maintain for 25 minutes (CT = 50).</li>
+          <li>Reopen.</li>
+        </ol>
+        <p><strong>Diarrheal accident (Crypto risk):</strong></p>
+        <ol>
+          <li>Close the pool — extended.</li>
+          <li>Remove material with a net; disinfect.</li>
+          <li>Raise FC to 20 ppm at pH ≤ 7.5 with stabilizer ideally at zero (CYA inhibits Crypto kill).</li>
+          <li>Maintain 20 ppm for 12.75 hours (CT = 15,300).</li>
+          <li>Filter, backwash thoroughly, then return chlorine to normal.</li>
+        </ol>
+        <p>Document everything — time, who, action, restart time. Vomit and blood follow similar protocols (close, treat to 2 ppm at pH 7.5 for 25 minutes).</p>`
+      },
+      {
+        title:"Daily, Weekly & Monthly Tasks",
+        body:`<p><strong>Daily:</strong> chlorine + pH test (every 2–4 hrs); empty skimmer baskets; check chemical feeder reservoirs; visual inspection of decks, drains, signage; brief log entry.</p>
+        <p><strong>Weekly:</strong> alkalinity / calcium hardness / CYA test; brush all surfaces; vacuum; clean pump basket; check filter pressure; inspect main drain cover.</p>
+        <p><strong>Monthly:</strong> calibrate test kit / photometer; tile line cleaning; inspect deck drains and gutters; verify rescue equipment present and serviceable; review staff in-service.</p>
+        <p><strong>Quarterly / seasonally:</strong> filter media inspection; chemical feeder rebuild; flow meter accuracy check; emergency action plan rehearsal.</p>
+        <p><strong>Annually:</strong> sand replacement check; full electrical / GFCI test; suction outlet cover inspection; recertify CPO if expiring.</p>`
+      }
+    ],
+    miniQuizzes:[
+      {
+        afterSection:2,
+        title:"Mini Quiz — Testing & Recordkeeping",
+        questions:[
+          {q:"How often should free chlorine and pH be tested in an operating public pool?", a:["Once a day","Every 2–4 hours","Weekly","Monthly"], c:1, e:"Most jurisdictions require chlorine and pH tests every 2–4 hours during operation, more frequently in spas and high-load conditions."},
+          {q:"DPD reagent is generally good for how long once opened?", a:["1 month","6 months","About 12 months","5 years"], c:2, e:"DPD reagent loses sensitivity over time; replace annually and store cool/dark."},
+          {q:"The most accurate test method listed is:", a:["Test strips","OTO","DPD with photometer","Visual"], c:2, e:"DPD with a photometer/spectrophotometer is the most precise method, reading to 0.1 ppm."},
+          {q:"Pool operation logs are typically retained for:", a:["1 week","30 days","3–5 years","Forever"], c:2, e:"Most jurisdictions require 3–5 years of retained daily operation logs."}
+        ]
+      },
+      {
+        afterSection:4,
+        title:"Mini Quiz — Contamination Response",
+        questions:[
+          {q:"For a formed-stool fecal accident, the required response is:", a:["No action required","Close pool, remove, FC 2 ppm at pH 7.5 for 25 minutes","Drain pool completely","Raise FC to 50 ppm for 24 hours"], c:1, e:"Formed-stool requires CT of 50 — about FC 2 ppm at pH 7.5 for 25 minutes."},
+          {q:"For a diarrheal (Cryptosporidium) accident, FC must be raised to approximately:", a:["1 ppm","5 ppm","10 ppm","20 ppm"], c:3, e:"Crypto disinfection requires FC 20 ppm at pH ≤ 7.5 for 12.75 hours (CT 15,300), with CYA ideally at zero."},
+          {q:"Cyanuric acid affects Crypto disinfection by:", a:["Speeding it up","Having no effect","Significantly slowing chlorine's ability to kill Crypto","Required for the kill"], c:2, e:"CYA dramatically reduces the rate of Crypto inactivation. Some protocols require CYA dilution before treatment."},
+          {q:"Vomit and blood contamination response is similar to:", a:["No action","Formed-stool fecal protocol","Diarrheal protocol","Drain pool"], c:1, e:"Vomit and blood follow the formed-stool protocol — close, treat to FC 2 ppm at pH 7.5 for 25 minutes."}
+        ]
+      }
+    ],
+    completionQuiz:{
+      title:"Module 4 Completion Quiz — Operations",
+      questions:[
+        {q:"Skimmer baskets should be emptied:", a:["Daily","Weekly","Monthly","Only when full"], c:0, e:"Skimmer baskets are a daily task; clogged baskets reduce flow and skimming."},
+        {q:"Test strips are best used for:", a:["Compliance reporting","Quick screening","Calibration","Court evidence"], c:1, e:"Test strips are convenient for screening between formal DPD tests but should not be the sole compliance method."},
+        {q:"Required CT (concentration × time) for a formed-stool fecal accident is approximately:", a:["5","50","500","5000"], c:1, e:"CT = 50: about 2 ppm FC for 25 minutes at pH 7.5."},
+        {q:"Brushing pool walls is most important to prevent:", a:["Algae and biofilm","Heater scale","Cyanuric acid loss","High pH"], c:0, e:"Mechanical brushing breaks up biofilm and exposes growth to sanitizer."},
+        {q:"A daily log should include all of the following EXCEPT:", a:["Chemical readings","Bather load","Personal staff schedules","Backwash and cleaning records"], c:2, e:"Personal scheduling is HR — operations logs focus on what was tested, added, and cleaned."},
+        {q:"Pump baskets are typically inspected:", a:["Daily","At least weekly","Monthly","Annually"], c:1, e:"Pump strainer baskets should be inspected and emptied at least weekly, more often with high debris."},
+        {q:"After a fecal accident, the affected pool should be:", a:["Left open","Closed only if visible","Closed during disinfection","Drained immediately"], c:2, e:"Always close the pool during the entire disinfection period."},
+        {q:"The most accurate field method for free chlorine is:", a:["OTO","DPD photometer","Test strips","pH paper"], c:1, e:"DPD with a photometer reads free chlorine to 0.1 ppm, the most precise field method."},
+        {q:"Tile line cleaning is typically a ____ task.", a:["Daily","Monthly","Annual","Once-a-decade"], c:1, e:"Calcium scale builds at the air-water interface; clean monthly with mild acid or specialty tile cleaner."},
+        {q:"Daily inspection should include:", a:["Drain covers and signage","Roof gutters","Air conditioning","Parking lot"], c:0, e:"Suction outlet covers and required signage are part of daily safety walks."}
+      ]
+    }
+  },
+
+  // ============ MODULE 5: Health Codes & Regulations ============
+  {
+    id:"m5",
+    title:"Health Codes & Regulations",
+    intro:"From the federal VGB Act to local health departments, public pools operate inside a tight regulatory frame. This module covers the Model Aquatic Health Code (MAHC), the Virginia Graeme Baker Pool & Spa Safety Act, ADA accessibility, and the legal duty of the CPO.",
+    sections:[
+      {
+        title:"The Model Aquatic Health Code (MAHC)",
+        body:`<p>Authored by the CDC, the MAHC is a voluntary model code that state and local jurisdictions adopt and adapt. Its goal is to reduce drowning, injury, and recreational water illness through consistent design, construction, and operational standards.</p>
+        <p>Key MAHC provisions for operators:</p>
+        <ul>
+          <li>Free chlorine 1–10 ppm; combined chlorine ≤ 0.4 ppm</li>
+          <li>pH 7.2–7.8</li>
+          <li>Cyanuric acid ≤ 90 ppm (some jurisdictions cap at 100)</li>
+          <li>Required testing intervals (chlorine + pH every 2–4 hrs minimum)</li>
+          <li>Bather load limits and water-line freeboard</li>
+          <li>Lifeguard staffing ratios (when required)</li>
+          <li>Posted depths, no-diving signs, emergency phone</li>
+        </ul>
+        <p>The MAHC is not law in itself — it becomes enforceable only when adopted by a state or county. Always confirm the locally-applicable code.</p>`
+      },
+      {
+        title:"VGB Pool & Spa Safety Act",
+        body:`<p>The <strong>Virginia Graeme Baker (VGB) Pool & Spa Safety Act</strong>, signed in 2007 and effective December 19, 2008, was passed in response to the 2002 entrapment death of seven-year-old Virginia Graeme Baker.</p>
+        <p>VGB requires:</p>
+        <ul>
+          <li>All public pools and spas to have <strong>ANSI/APSP-16 compliant suction outlet covers</strong> (anti-entrapment).</li>
+          <li>Single main drain installations to add a secondary protection: <strong>SVRS</strong> (Safety Vacuum Release System), gravity drainage, suction-limiting vent, automatic pump shut-off, OR a properly designed dual main drain system separated by at least 3 feet.</li>
+          <li>Drain cover certification life of 5–7 years (per manufacturer).</li>
+        </ul>
+        <p>Failure to comply is a federal violation enforced by the Consumer Product Safety Commission (CPSC). The CPO must verify cover certifications during inspections.</p>`
+      },
+      {
+        title:"ADA Accessibility Requirements",
+        body:`<p>The 2010 ADA Standards require public pools and spas to provide accessible entry/exit. As of January 31, 2013, fixed-equipment installation is required.</p>
+        <ul>
+          <li><strong>Pools &lt; 300 linear feet of pool wall:</strong> at least one accessible means (lift OR sloped entry).</li>
+          <li><strong>Pools ≥ 300 linear feet:</strong> at least two accessible means, one of which must be a lift or sloped entry.</li>
+          <li><strong>Spas:</strong> at least one of: lift, transfer wall, or transfer system. Where multiple spas are provided in a cluster, only 5% (minimum 1) must be accessible.</li>
+        </ul>
+        <p>Lifts must be permanently affixed (not portable), available at all times the pool is open, with controls operable from both deck and water.</p>`
+      },
+      {
+        title:"Bather Load, Signage & Inspections",
+        body:`<p><strong>Bather load</strong> is the maximum number of swimmers permitted at one time. The MAHC formula is approximately:</p>
+        <ul>
+          <li>Shallow water (&lt; 5 ft): 15 sq ft per bather.</li>
+          <li>Deep water (≥ 5 ft): 20 sq ft per bather.</li>
+          <li>Diving area: 300 sq ft per board.</li>
+        </ul>
+        <p><strong>Required signage</strong> commonly includes: posted depths and slope; &ldquo;No diving&rdquo; in shallow areas; pool rules; emergency phone location; bather load capacity; pool hours; suction outlet warning.</p>
+        <p>Health-department inspections are typically annual, with unannounced re-inspections triggered by complaints, illness reports, or prior violations. Maintain logs, certifications, and equipment receipts in an organized binder for inspector review.</p>`
+      }
+    ],
+    miniQuizzes:[
+      {
+        afterSection:2,
+        title:"Mini Quiz — MAHC & VGB",
+        questions:[
+          {q:"The MAHC was authored by the:", a:["EPA","FDA","CDC","CPSC"], c:2, e:"The CDC develops and updates the Model Aquatic Health Code."},
+          {q:"VGB Act compliance requires:", a:["Lifeguards on every pool","ANSI/APSP-16 suction outlet covers","Salt chlorination","Annual repainting"], c:1, e:"VGB mandates anti-entrapment drain covers meeting the ANSI/APSP-16 standard."},
+          {q:"Single main drain pools under VGB must add a secondary system, such as:", a:["SVRS or dual drains","A solar cover","An ozone system","A diving board"], c:0, e:"A safety vacuum release system, gravity drainage, suction-limiting vent, automatic pump shut-off, or a properly separated dual main drain meets the requirement."},
+          {q:"Drain covers typically must be replaced every:", a:["1–2 years","5–7 years","20 years","Never"], c:1, e:"VGB-compliant drain covers carry a 5–7 year manufacturer certification life."}
+        ]
+      },
+      {
+        afterSection:4,
+        title:"Mini Quiz — ADA & Bather Load",
+        questions:[
+          {q:"A public pool with 350 linear feet of wall must provide:", a:["No accessible means","One lift only","Two accessible means (one lift or sloped entry)","Four accessible means"], c:2, e:"Pools ≥ 300 linear feet require two accessible means; one must be a lift or sloped entry."},
+          {q:"Pool lifts must be:", a:["Portable, brought out on request","Permanently affixed and available whenever the pool is open","Operated only by staff","Removed at night"], c:1, e:"Per the 2010 ADA Standards, lifts must be permanently affixed and available at all open hours."},
+          {q:"Shallow-water bather load is approximately:", a:["5 sq ft per bather","15 sq ft per bather","30 sq ft per bather","100 sq ft per bather"], c:1, e:"15 sq ft per bather in shallow water under MAHC; 20 sq ft per bather in deep water."},
+          {q:"Health department inspections are typically:", a:["Daily","Weekly","Annual, plus complaint-driven","Once every 10 years"], c:2, e:"Most jurisdictions inspect once a year with unannounced re-inspections for complaints, illness, or prior violations."}
+        ]
+      }
+    ],
+    completionQuiz:{
+      title:"Module 5 Completion Quiz — Codes",
+      questions:[
+        {q:"The MAHC's recommended pH range is:", a:["6.5–7.0","7.2–7.8","7.8–8.4","8.0–9.0"], c:1, e:"MAHC and PHTA share the 7.2–7.8 pH range."},
+        {q:"VGB stands for:", a:["Variable Gravity Backwash","Virginia Graeme Baker","Vacuum Gradient Boiler","Voluntary Government Bond"], c:1, e:"The VGB Pool & Spa Safety Act is named for Virginia Graeme Baker, who died in a hot tub entrapment in 2002."},
+        {q:"VGB compliance is enforced by the:", a:["EPA","FDA","CPSC","DOL"], c:2, e:"The Consumer Product Safety Commission enforces the VGB Act."},
+        {q:"ADA accessible spas require at least one of:", a:["Lift, transfer wall, or transfer system","Sloped entry only","Heated steps","Side handrails only"], c:0, e:"Public spas must offer a lift, transfer wall, or transfer system as accessible entry."},
+        {q:"Pools shorter than 300 linear feet of wall require:", a:["Zero accessible means","At least one accessible means","Two accessible means","Three accessible means"], c:1, e:"Smaller pools need at least one accessible means (lift or sloped entry)."},
+        {q:"The maximum allowed combined chlorine under MAHC is:", a:["0.2 ppm","0.4 ppm","1.0 ppm","No limit"], c:1, e:"Combined chlorine must be kept ≤ 0.4 ppm under MAHC."},
+        {q:"Required signage at most public pools includes all EXCEPT:", a:["Depth markers","No-diving signs in shallow areas","Pool rules","Lifeguard salaries"], c:3, e:"Personnel salaries are not posted; depth, no-diving, rules, and emergency contacts are."},
+        {q:"Bather load for diving areas is approximately:", a:["50 sq ft per board","150 sq ft per board","300 sq ft per board","No limit"], c:2, e:"Diving areas use 300 sq ft per board to maintain safe spacing."},
+        {q:"The MAHC is:", a:["Federal law","A model code adopted by states","A trade-association magazine","A union contract"], c:1, e:"The MAHC is a voluntary model adopted (often with modifications) by state and local health departments."},
+        {q:"Cyanuric acid in MAHC is typically capped at:", a:["20 ppm","50 ppm","90 ppm","500 ppm"], c:2, e:"MAHC sets ≤ 90 ppm for CYA; many states cap at 100 ppm."}
+      ]
+    }
+  },
+
+  // ============ MODULE 6: Safety, Emergency Response & First Aid ============
+  {
+    id:"m6",
+    title:"Safety, Emergency Response & First Aid",
+    intro:"A CPO's most important job is preventing injury — and being prepared when prevention fails. This module covers entrapment prevention, recreational water illness, emergency action planning, basic first aid, AED use, chemical exposure, and lightning protocols.",
+    sections:[
+      {
+        title:"Entrapment & Drain Safety",
+        body:`<p>Five recognized types of suction entrapment can injure or kill swimmers:</p>
+        <ol>
+          <li><strong>Body entrapment</strong> — torso seals against a flat or partially blocked drain.</li>
+          <li><strong>Limb entrapment</strong> — arm or leg slips into a broken cover.</li>
+          <li><strong>Hair entrapment</strong> — long hair flows into a grate and becomes wrapped.</li>
+          <li><strong>Mechanical entrapment</strong> — jewelry, swimsuit, finger caught in a fitting.</li>
+          <li><strong>Evisceration / disembowelment</strong> — exposed suction inlet creates internal injury.</li>
+        </ol>
+        <p>Prevention: VGB-compliant covers in good condition, dual main drains separated by ≥ 3 ft (or other approved secondary system), regular weekly visual inspection, and immediate pool closure if any cover is missing or damaged.</p>`
+      },
+      {
+        title:"Recreational Water Illness (RWI)",
+        body:`<p>RWIs are illnesses spread by contact with contaminated recreational water. The most common include:</p>
+        <ul>
+          <li><strong>Cryptosporidium</strong> (&ldquo;Crypto&rdquo;) — chlorine-resistant; the leading cause of pool outbreaks.</li>
+          <li><strong>Giardia</strong> — protozoan; resistant to normal chlorine but killed by elevated levels.</li>
+          <li><strong>E. coli O157:H7</strong> — bacterial; killed quickly by chlorine but spreads via diarrhea.</li>
+          <li><strong>Pseudomonas aeruginosa</strong> — bacterial; causes &ldquo;hot tub rash&rdquo; and otitis externa (swimmer's ear).</li>
+          <li><strong>Norovirus</strong> — viral; chlorine-sensitive but extremely contagious.</li>
+          <li><strong>Legionella</strong> — bacterial; aerosolized water from spas; causes pneumonia.</li>
+        </ul>
+        <p>Prevention: maintain residual chlorine, manage pH for HOCl efficiency, post hygiene signage (shower before swim, no swim with diarrhea, frequent restroom breaks for kids), keep CYA in check (especially for Crypto outbreak response), and follow CDC's contamination response procedures.</p>`
+      },
+      {
+        title:"Emergency Action Plan (EAP)",
+        body:`<p>Every public aquatic facility must have a written, posted, and rehearsed Emergency Action Plan covering at least: drowning, suspected spinal injury, fecal/vomit/blood contamination, chemical spill, severe weather, fire, and missing-person procedures.</p>
+        <p><strong>Required EAP elements:</strong></p>
+        <ul>
+          <li>Roles and responsibilities (lifeguard, CPO, manager, EMS liaison).</li>
+          <li>Emergency phone location and posted numbers (911, poison control, facility manager).</li>
+          <li>Equipment locations: AED, first-aid kit, backboard, oxygen, emergency shut-off.</li>
+          <li>Evacuation routes and assembly points.</li>
+          <li>Rehearsal frequency (commonly monthly drills documented in the log).</li>
+        </ul>
+        <p>The EAP must be available to all staff and inspectors; new hires are trained on it before solo duty.</p>`
+      },
+      {
+        title:"First Aid, CPR & AED Basics",
+        body:`<p>Lifeguards are required to be CPR/AED certified; CPOs and managers commonly hold the same. Core skills:</p>
+        <ul>
+          <li><strong>Recognize a drowning</strong> — drowning is silent: vertical body, head tilted back, no splashing.</li>
+          <li><strong>Activate the EAP</strong> — call 911 first, then begin care.</li>
+          <li><strong>CPR</strong> — adults: 30 compressions to 2 breaths, ~2 inches deep, 100–120 per minute. Continue until AED arrives or victim breathes.</li>
+          <li><strong>AED</strong> — power on, follow voice prompts, expose chest, attach pads (upper right, lower left), allow analyze, deliver shock if advised, resume CPR immediately.</li>
+          <li><strong>Suspected spinal injury</strong> — keep head/neck stabilized in line, use a backboard, do not remove from water without proper technique.</li>
+        </ul>
+        <p>Bleeding, breaks, sunstroke, and hypothermia are routine first-aid topics. CPOs ensure supplies are stocked and unexpired.</p>`
+      },
+      {
+        title:"Chemical Safety & Storage",
+        body:`<p>Pool chemicals are oxidizers, acids, and bases — incompatible if mixed.</p>
+        <p><strong>Storage rules (OSHA / NFPA / SDS):</strong></p>
+        <ul>
+          <li>Cool, dry, ventilated, dedicated room.</li>
+          <li>Acids stored away from chlorine and other oxidizers; ideally in a separate cabinet.</li>
+          <li>Original manufacturer containers; clearly labeled; shelves below eye level.</li>
+          <li>Liquid storage on secondary containment (spill trays).</li>
+          <li>Safety Data Sheets (SDS) accessible to staff at all times.</li>
+        </ul>
+        <p><strong>PPE</strong>: chemical-splash goggles, nitrile gloves, apron or splash suit, N95 (DE), full face shield for liquid acid handling. <strong>Eye-wash station</strong> within 10 seconds of any chemical-handling area, tested weekly.</p>
+        <p>Spills: small spills — neutralize and absorb with appropriate kit; large or gas-releasing spills — evacuate, call 911, ventilate.</p>`
+      },
+      {
+        title:"Lightning, Severe Weather & Heat",
+        body:`<p>Common weather rule: clear pools at the <strong>first lightning flash or thunder</strong>; remain closed until 30 minutes have passed since the last observed flash/thunder. Many CPOs use a 6-second flash-to-bang rule (≤ 6 seconds = ~1.2 miles, evacuate).</p>
+        <p>Outdoor pools with no lightning detector should monitor weather radar plus the audible thunder rule.</p>
+        <p>Heat: monitor heat index above 95 °F; provide rest breaks for staff, water, and shade. Child sunburn is a daily reality — provide shade and post sunscreen reminders.</p>`
+      }
+    ],
+    miniQuizzes:[
+      {
+        afterSection:3,
+        title:"Mini Quiz — Safety & RWI",
+        questions:[
+          {q:"Which pathogen is the most chlorine-resistant?", a:["E. coli","Pseudomonas","Cryptosporidium","Norovirus"], c:2, e:"Cryptosporidium oocysts resist standard chlorination — Crypto is the leading cause of pool outbreaks."},
+          {q:"Hair entrapment is one of how many recognized types of suction entrapment?", a:["3","4","5","7"], c:2, e:"Five types: body, limb, hair, mechanical, evisceration."},
+          {q:"\"Hot tub rash\" is most commonly caused by:", a:["Cryptosporidium","Pseudomonas aeruginosa","Norovirus","Giardia"], c:1, e:"Pseudomonas aeruginosa thrives in warm water with weak sanitizer and causes follicular skin infections."},
+          {q:"An EAP must include all EXCEPT:", a:["Roles & responsibilities","Equipment locations","Personal phone numbers of bathers","Evacuation routes"], c:2, e:"EAPs cover staff roles, locations of safety equipment, and procedures — not bather phone data."}
+        ]
+      },
+      {
+        afterSection:6,
+        title:"Mini Quiz — First Aid & Chemicals",
+        questions:[
+          {q:"Adult CPR compression rate is approximately:", a:["60 per minute","100–120 per minute","150–200 per minute","No specific rate"], c:1, e:"Compressions are 100–120 per minute, ~2 inches deep, ratio 30:2."},
+          {q:"AED pads are placed:", a:["Both on the chest center","Upper right and lower left","Both on the back","One on each shoulder"], c:1, e:"Standard pad placement is upper-right chest and lower-left side, below the armpit."},
+          {q:"You should evacuate the pool:", a:["At the first thunder/lightning","After 5 strikes","Only if it rains","Never"], c:0, e:"Standard rule: evacuate at first lightning or thunder, reopen 30 minutes after the last."},
+          {q:"Eye-wash stations should be located within ____ of chemical handling.", a:["1 second","10 seconds","30 seconds","2 minutes"], c:1, e:"OSHA / ANSI Z358.1 specifies eye-wash within 10 seconds of travel."},
+          {q:"Mixing acid and chlorine in storage may produce:", a:["Harmless steam","Toxic chlorine gas","Cool water","Soda ash"], c:1, e:"Acid + chlorine releases toxic chlorine gas. Always store separately."}
+        ]
+      }
+    ],
+    completionQuiz:{
+      title:"Module 6 Completion Quiz — Safety",
+      questions:[
+        {q:"The Virginia Graeme Baker Act primarily addresses:", a:["Pool chemistry","Suction entrapment","Lifeguard wages","Water rights"], c:1, e:"VGB targets entrapment via cover and secondary-system requirements."},
+        {q:"Drowning typically appears as:", a:["Loud splashing","Vertical body, no sound","Floating face down only","Bright surface waves"], c:1, e:"Real drowning is silent: instinctive drowning response is vertical, head tilted, no splash."},
+        {q:"Adult chest compressions are about:", a:["1 inch deep","2 inches deep","4 inches deep","No depth target"], c:1, e:"Compressions are about 2 inches deep at 100–120 per minute."},
+        {q:"AEDs should be located:", a:["Locked in the manager's office","Within 1–3 minutes of any aquatic area","Off-site","On the pool deck only when an event is held"], c:1, e:"AEDs must be reachable within minutes; visible and accessible during operating hours."},
+        {q:"Chemical storage rooms should be:", a:["Warm and humid","Cool, dry, ventilated, dedicated","In the locker room","With dry goods"], c:1, e:"Cool, dry, dedicated, ventilated rooms separate incompatible chemicals."},
+        {q:"After lightning, pools may reopen:", a:["Immediately","After 5 minutes","30 minutes after the last flash/thunder","Only the next day"], c:2, e:"Standard 30-minute waiting period after the last observed flash or thunder."},
+        {q:"Acids in storage should be:", a:["Mixed with chlorine for convenience","Kept separately from oxidizers","Kept open","Stored above eye level"], c:1, e:"Acids and oxidizers must never share storage; secondary containment is standard."},
+        {q:"\"Crypto\" is short for:", a:["Cryptocurrency","Cryptosporidium","Cryptococcus","Cryptodira"], c:1, e:"Cryptosporidium is the chlorine-resistant parasite most associated with pool outbreaks."},
+        {q:"Rescue equipment that should be present at staffed pools includes:", a:["Backboard, ring buoy, reaching pole, first-aid kit","Snorkels","Diving boards","Goggles only"], c:0, e:"Backboard, ring buoy/throw rope, reaching pole, first-aid kit, AED, and oxygen are standard."},
+        {q:"In the event of a chlorine gas leak, you should:", a:["Run toward the source to investigate","Evacuate uphill/upwind, call 911","Use a fan to push the gas back into the room","Cover with a tarp"], c:1, e:"Evacuate uphill/upwind, account for staff, call 911. Do not attempt close investigation."}
+      ]
+    }
+  },
+
+  // ============ MODULE 7: Pool Equipment & Hydraulics ============
+  {
+    id:"m7",
+    title:"Pool Equipment & Hydraulics",
+    intro:"The mechanical room is where chemistry meets engineering. This module covers pumps, motors, gauges, valves, heaters, chemical feeders, and how head loss, flow rate, and pipe sizing dictate everything you do on deck.",
+    sections:[
+      {
+        title:"Pumps & Motors",
+        body:`<p>The circulation pump is the heart of the pool. Most commercial pools use a <strong>centrifugal end-suction pump</strong>: an electric motor turns an impeller that creates a low-pressure suction at the inlet and pushes water out the discharge.</p>
+        <p>Key pump terms:</p>
+        <ul>
+          <li><strong>Flow rate (gpm)</strong> — gallons per minute the pump moves at a given resistance.</li>
+          <li><strong>Total Dynamic Head (TDH)</strong> — total resistance the pump must overcome (feet of water column).</li>
+          <li><strong>Pump curve</strong> — manufacturer chart showing flow vs. TDH; selecting a pump means matching the curve to the system.</li>
+          <li><strong>Variable Frequency Drive (VFD)</strong> — controls motor speed; modern energy-efficient retrofit.</li>
+        </ul>
+        <p>Strainer baskets must be inspected and cleared at least weekly. A clogged basket starves the pump, reducing flow, and can cause cavitation that damages the impeller.</p>`
+      },
+      {
+        title:"Gauges, Valves & Flow Meters",
+        body:`<p>Three gauges run the show in any mechanical room:</p>
+        <ul>
+          <li><strong>Compound gauge</strong> at pump inlet — reads vacuum (in. Hg) and low pressure.</li>
+          <li><strong>Pressure gauge</strong> at filter inlet — clean baseline + 8–10 psi triggers cleaning.</li>
+          <li><strong>Flow meter</strong> on return line — confirms turnover rate; a target gpm is calculated from pool volume.</li>
+        </ul>
+        <p><strong>Common valves:</strong> ball (full flow shut-off), butterfly (large pipe shut-off), gate (legacy), check (one-way), multiport (filter selector with FILTER / BACKWASH / RINSE / WASTE / RECIRCULATE / CLOSED).</p>
+        <p>Always shut off the pump before turning a multiport valve — the pressure surge will tear the spider gasket and bypass your filter.</p>`
+      },
+      {
+        title:"Hydraulics & Head Loss",
+        body:`<p>Water moving through pipes loses energy to friction. <strong>Head loss</strong> is measured in feet of water column. Standard pipe-sizing rules to keep head loss reasonable:</p>
+        <ul>
+          <li>Suction (inlet) lines: ≤ 6 ft/sec — undersized suction causes cavitation.</li>
+          <li>Discharge (return) lines: ≤ 8 ft/sec — undersized return wastes power.</li>
+          <li>Copper tube: ≤ 8 ft/sec.</li>
+        </ul>
+        <p>Each fitting (90° elbow, tee, valve) adds &ldquo;equivalent feet&rdquo; of pipe. A 2&quot; 90° elbow ≈ 5.2 ft of pipe; a 2&quot; gate valve ≈ 1.4 ft; a 2&quot; check valve ≈ 14 ft. The system designer adds it all up to find TDH and pick a matching pump.</p>
+        <p>Field-side: oversized pipes are forgiving; undersized pipes are not. If a system runs hot, vibrates, or never reaches its rated flow, suspect head loss.</p>`
+      },
+      {
+        title:"Heaters & Chemical Feeders",
+        body:`<p><strong>Heater types:</strong></p>
+        <ul>
+          <li><strong>Gas (natural / propane)</strong> — fast heat, common in commercial pools.</li>
+          <li><strong>Electric resistance</strong> — small pools / spas.</li>
+          <li><strong>Heat pump</strong> — energy-efficient electric; slow recovery.</li>
+          <li><strong>Solar</strong> — panel array; supplemental.</li>
+        </ul>
+        <p>Heater longevity depends on water balance — low pH and low calcium hardness eat copper headers and heat exchangers. Maintain LSI within ±0.3.</p>
+        <p><strong>Chemical feeder types:</strong></p>
+        <ul>
+          <li><strong>Erosion feeder</strong> — water flows through a chamber holding tablets (trichlor or bromine); simplest design.</li>
+          <li><strong>Peristaltic / diaphragm pump</strong> — meters liquid sodium hypochlorite, acid, or muriatic from a day tank.</li>
+          <li><strong>Salt-chlorine generator</strong> — electrolytic cell; produces chlorine on-site.</li>
+        </ul>
+        <p>All chemical injection should be downstream of the heater to protect the heat exchanger from concentrated chemicals.</p>`
+      },
+      {
+        title:"Skimmers, Returns & Main Drains",
+        body:`<p><strong>Skimmers</strong> sit at water level, capturing surface debris and floating oils. Most pools have one skimmer per ~500 sq ft of surface. Skimmer flow is roughly 80% of total return; the remaining 20% comes from the main drain — required for full water-column circulation.</p>
+        <p><strong>Return inlets</strong> are positioned to push surface water toward skimmers. Adjust the eyeball fittings down or sideways to circulate the entire pool — never aim them up, which kicks debris back to the bottom.</p>
+        <p><strong>Main drains</strong> on a single drain require a secondary anti-entrapment system per VGB; dual drains must be ≥ 3 ft apart. Inspect covers monthly for cracks; replace per manufacturer life (5–7 yrs).</p>`
+      }
+    ],
+    miniQuizzes:[
+      {
+        afterSection:2,
+        title:"Mini Quiz — Pumps & Gauges",
+        questions:[
+          {q:"Suction-side gauges read in:", a:["psi only","Inches of mercury (vacuum) and low psi","Feet of head","Liters/sec"], c:1, e:"Compound gauges show both vacuum (in. Hg) and low positive pressure."},
+          {q:"Filter pressure rising 8–10 psi above clean indicates:", a:["A failed pump","Time to clean/backwash","High chlorine","Heater failure"], c:1, e:"Standard backwash trigger for sand and DE filters; same for cleaning a cartridge."},
+          {q:"Cavitation in a pump is caused by:", a:["Too much chlorine","Restricted suction (undersized line, clogged basket)","Excess pH","Cold water"], c:1, e:"Cavitation is suction starvation — vapor bubbles form and collapse, damaging the impeller."},
+          {q:"VFD on a pump motor controls:", a:["Voltage only","Motor speed for energy savings","Filter pressure","Heater output"], c:1, e:"Variable frequency drives modulate motor speed, dropping energy consumption substantially."}
+        ]
+      },
+      {
+        afterSection:5,
+        title:"Mini Quiz — Hydraulics & Heaters",
+        questions:[
+          {q:"Maximum recommended velocity in suction (inlet) lines is:", a:["2 ft/sec","6 ft/sec","12 ft/sec","No limit"], c:1, e:"Suction velocity is held to 6 ft/sec to prevent cavitation. Returns are typically held to 8 ft/sec."},
+          {q:"Chemical feed should be injected:", a:["Upstream of the heater","Downstream of the heater","Inside the filter","At the skimmer"], c:1, e:"Injecting after the heater protects the heat exchanger from concentrated chemicals."},
+          {q:"Heat exchangers fail prematurely when water is:", a:["Balanced","Acidic with low calcium","Too cold","Too low in TDS"], c:1, e:"Aggressive water (low pH, low calcium) attacks copper, leading to early heater failure."},
+          {q:"Skimmer return ratio is approximately:", a:["20% skimmer / 80% main drain","50/50","80% skimmer / 20% main drain","100% skimmer"], c:2, e:"Standard balance is ~80% surface (skimmer) to ~20% main drain."}
+        ]
+      }
+    ],
+    completionQuiz:{
+      title:"Module 7 Completion Quiz — Equipment",
+      questions:[
+        {q:"Total Dynamic Head (TDH) measures:", a:["Filter pressure","Total resistance the pump must overcome","Pool depth","Flow meter accuracy"], c:1, e:"TDH = sum of suction lift + discharge head + friction losses; pump must be selected to overcome it at design flow."},
+        {q:"A multiport valve must NOT be turned while:", a:["The chlorine is high","The pump is running","The pool is closed","The cover is on"], c:1, e:"Always shut off the pump before turning a multiport — pressure damages the spider gasket."},
+        {q:"Strainer baskets at the pump should be checked at least:", a:["Daily","Weekly","Monthly","Annually"], c:1, e:"At least weekly; daily for high-debris environments."},
+        {q:"Which gauge is on the pump suction side?", a:["Pressure gauge","Compound gauge","Flow meter","Tachometer"], c:1, e:"Compound gauges show vacuum and low positive pressure on suction lines."},
+        {q:"Which valve fully shuts off flow with a quarter turn?", a:["Globe","Ball","Check","Gate"], c:1, e:"Ball valves give full quarter-turn shut-off; gate valves are slow turns; check valves are one-way."},
+        {q:"Salt-chlorine generators require approximately:", a:["10–50 ppm salt","500–1000 ppm","3000–4000 ppm","20,000 ppm (sea water)"], c:2, e:"Most residential / commercial salt cells operate at 3000–4000 ppm dissolved sodium chloride."},
+        {q:"Heater lifespan is most reduced by:", a:["High pH","Aggressive (low LSI) water","Low temperature","High alkalinity"], c:1, e:"Aggressive water dissolves copper headers, the leading cause of premature heater failure."},
+        {q:"Dual main drains must be separated by at least:", a:["1 foot","3 feet","10 feet","20 feet"], c:1, e:"VGB-compliant dual drain separation is ≥ 3 ft to prevent simultaneous blockage."},
+        {q:"Skimmers should typically be installed at:", a:["1 per 1000 sq ft","1 per 500 sq ft","1 per 100 sq ft","1 per 50 sq ft"], c:1, e:"PHTA recommendation is approximately 1 skimmer per 500 sq ft of surface."},
+        {q:"Erosion feeders contain:", a:["Liquid acid","Trichlor or bromine tablets","Liquid bleach","Cyanuric acid"], c:1, e:"Erosion feeders use solid tablets — most often trichlor or bromine; flow erodes them at a controlled rate."}
+      ]
+    }
+  },
+
+  // ============ MODULE 8: Aquatic Facility Management ============
+  {
+    id:"m8",
+    title:"Aquatic Facility Management",
+    intro:"Beyond chemistry and equipment, the CPO leads a facility — staff, budget, vendors, communications, and seasonal planning. This module covers staffing models, lifeguard supervision, opening and closing routines, energy management, and risk reduction through documentation and training.",
+    sections:[
+      {
+        title:"Staffing & Supervision",
+        body:`<p>The CPO is rarely the only staff member; success depends on selecting, training, scheduling, and supervising a competent team. Roles typically include:</p>
+        <ul>
+          <li><strong>Aquatic manager</strong> — overall accountability.</li>
+          <li><strong>CPO</strong> — chemistry, equipment, compliance.</li>
+          <li><strong>Lifeguards</strong> — water surveillance and rescue.</li>
+          <li><strong>Front desk / cashier</strong> — admissions and rule enforcement.</li>
+          <li><strong>Custodial</strong> — locker rooms and decks.</li>
+        </ul>
+        <p>Lifeguard zones (the &ldquo;10-20 rule&rdquo;): every guard scans their zone in 10 seconds and can reach any point in 20 seconds. Rotations every 20–30 minutes prevent fatigue. Document daily in-service training (15 min minimum) and weekly drills.</p>`
+      },
+      {
+        title:"Opening, Closing & Seasonal Routines",
+        body:`<p><strong>Daily opening checklist (typical):</strong></p>
+        <ol>
+          <li>Visual deck and water clarity check (you should see the main drain clearly).</li>
+          <li>Test FC, CC, pH; record.</li>
+          <li>Check filter pressure and pump operation.</li>
+          <li>Empty skimmer baskets; restock chemicals.</li>
+          <li>Verify rescue equipment, AED, first-aid kit, signage.</li>
+          <li>Walk perimeter for hazards.</li>
+        </ol>
+        <p><strong>Closing:</strong> final FC/pH test, secure chemical storage, lock gates, post next-open time, log incidents.</p>
+        <p><strong>Pool opening (spring):</strong> remove cover, brush walls, vacuum, balance chemistry slowly (TA → CH → pH → chlorine), recoat DE if applicable, prime pump, run continuous filtration for 24+ hours, then test before opening.</p>
+        <p><strong>Winterization (where applicable):</strong> drop water below skimmer line, blow lines clear, antifreeze in plumbing, drain heater, store chemicals indoors, secure cover.</p>`
+      },
+      {
+        title:"Risk Management & Documentation",
+        body:`<p>Documentation is your legal defense. Maintain a 3-ring binder (and digital backup) containing:</p>
+        <ul>
+          <li>Daily operations logs.</li>
+          <li>CPO certifications and lifeguard certifications (with expiration dates).</li>
+          <li>EAP and rehearsal logs.</li>
+          <li>SDS for every chemical on site.</li>
+          <li>Drain cover certifications and replacement records.</li>
+          <li>Annual health-department inspection reports.</li>
+          <li>Equipment service / repair records.</li>
+          <li>Incident reports (witness names, time, action taken, EMS response).</li>
+        </ul>
+        <p>Incident reporting: write what happened, when, who responded, what was done, and the disposition. Avoid speculation; stick to facts. File same-day.</p>`
+      },
+      {
+        title:"Energy, Water & Cost Management",
+        body:`<p>Pumps, heaters, and water replacement dominate aquatic operating cost. Strategies:</p>
+        <ul>
+          <li><strong>Variable speed pumps / VFDs</strong> — typically reduce circulation energy by 50–70%.</li>
+          <li><strong>Pool covers</strong> on spas and outdoor pools cut evaporation (the largest heat loss) by 50%+ overnight.</li>
+          <li><strong>Heat pumps</strong> with COP &gt; 5 outperform gas for steady heating in mild climates.</li>
+          <li><strong>Cartridge filters</strong> save 200–500 gallons per backwash cycle vs. sand.</li>
+          <li><strong>Low-flow showerheads</strong> in bath houses cut municipal-water and sewer cost.</li>
+        </ul>
+        <p>Track monthly: chemical use, water use, electricity, gas. Year-over-year comparisons surface drift before it becomes a budget surprise.</p>`
+      },
+      {
+        title:"Communication, Training & Continuous Improvement",
+        body:`<p>The most overlooked CPO skill is communication. You translate between chemistry, regulators, swimmers, parents, owners, and contractors.</p>
+        <ul>
+          <li><strong>Pre-shift huddles</strong> — 5 minutes covering yesterday's incidents, today's chemistry, weather, special events.</li>
+          <li><strong>Posted bather rules</strong> in plain language; multilingual where appropriate.</li>
+          <li><strong>Monthly drills</strong> — drowning, spinal, fecal, fire, AED — rotated and logged.</li>
+          <li><strong>Annual EAP review</strong> with the entire team, ideally with local EMS present.</li>
+          <li><strong>Recertification calendars</strong> tracked centrally; CPO every 5 years (PHTA), lifeguard every 2 years, CPR/AED annually.</li>
+        </ul>
+        <p>Continuous improvement: every closure, complaint, or audit finding becomes a documented lesson and a procedural update. Pools improve faster than any other facility type when small failures are surfaced and fixed early.</p>`
+      }
+    ],
+    miniQuizzes:[
+      {
+        afterSection:2,
+        title:"Mini Quiz — Staffing & Operations",
+        questions:[
+          {q:"The 10-20 rule for lifeguards means:", a:["10 ft of rope and 20 ft of pool","Scan zone in 10 sec, reach any point in 20 sec","10 swimmers per guard per 20 sq ft","10 minutes of guarding then 20 minutes off"], c:1, e:"Lifeguards must scan their entire zone in 10 seconds and be able to reach any point within 20 seconds."},
+          {q:"Lifeguard rotations should typically occur every:", a:["5 minutes","20–30 minutes","2 hours","Once a shift"], c:1, e:"Rotation every 20–30 minutes prevents fatigue and lapses in surveillance."},
+          {q:"At opening you should be able to clearly see:", a:["The skimmer","The main drain","Only the surface","The first 6 inches"], c:1, e:"If you cannot see the bottom drain clearly, water clarity is failing — close until corrected."},
+          {q:"Spring-opening chemistry adjustment order is typically:", a:["Chlorine → CH → pH → TA","TA → CH → pH → chlorine","CH → chlorine → pH → TA","Order does not matter"], c:1, e:"Adjust TA → CH → pH → chlorine; balance the buffer first, then sanitize."}
+        ]
+      },
+      {
+        afterSection:5,
+        title:"Mini Quiz — Documentation & Training",
+        questions:[
+          {q:"PHTA CPO certification is valid for:", a:["1 year","2 years","5 years","Life"], c:2, e:"PHTA CPO certification is valid for 5 years."},
+          {q:"American Red Cross lifeguard certification is typically valid for:", a:["6 months","2 years","5 years","Life"], c:1, e:"Most lifeguard certifications are valid for 2 years (CPR/AED skills are often re-verified annually)."},
+          {q:"A pool cover on an outdoor pool overnight reduces:", a:["Filtration cost","Evaporation and heat loss","Bather load","CYA"], c:1, e:"Evaporation is the largest source of heat loss; covers cut it by 50% or more overnight."},
+          {q:"An incident report should:", a:["Speculate on cause","Describe facts: who, what, when, where, action","Be filed weekly","Be private to the writer"], c:1, e:"Stick to facts; avoid speculation; file same-day; retain per legal requirements."}
+        ]
+      }
+    ],
+    completionQuiz:{
+      title:"Module 8 Completion Quiz — Management",
+      questions:[
+        {q:"PHTA CPO recertification interval is:", a:["1 year","2 years","5 years","Never"], c:2, e:"CPO certification expires every 5 years."},
+        {q:"The lifeguard 10-20 rule means:", a:["10 swimmers / 20 yrs","Scan in 10 sec, reach in 20 sec","Rotate 10/20","10 ft height / 20 ft rope"], c:1, e:"Lifeguards scan in 10 seconds and respond within 20 seconds."},
+        {q:"The largest source of heat loss from outdoor pools is:", a:["Conduction","Convection","Evaporation","Radiation"], c:2, e:"Evaporation accounts for 50–70% of heat loss; pool covers are the most effective control."},
+        {q:"During spring opening you should run filtration for at least:", a:["1 hour","6 hours","24 hours","1 week"], c:2, e:"Continuous filtration for at least 24 hours to clear the water before opening."},
+        {q:"Lifeguard in-service training is typically a:", a:["Once-per-year requirement","Weekly recurring requirement","Optional perk","One-time orientation"], c:1, e:"In-service training is typically a weekly (or more frequent) requirement."},
+        {q:"SDS sheets must be:", a:["Locked away","Accessible to staff at all times","Filed with EPA","Reviewed only quarterly"], c:1, e:"OSHA requires Safety Data Sheets accessible to staff at all times of operation."},
+        {q:"A daily opening check should include all EXCEPT:", a:["Water clarity","Filter pressure","Chemistry test","Repainting deck lines"], c:3, e:"Repainting is a seasonal capital task, not a daily check."},
+        {q:"Variable speed pumps typically reduce circulation energy by:", a:["5–10%","20–30%","50–70%","Energy use is unchanged"], c:2, e:"VFD / variable speed pumps deliver 50–70% energy reduction over single-speed pumps."},
+        {q:"Drain cover certifications must be tracked because they expire approximately every:", a:["1 year","5–7 years","20 years","Never"], c:1, e:"VGB-compliant covers carry a 5–7 year manufacturer life; replace and retain certifications."},
+        {q:"A complete EAP includes:", a:["Equipment locations only","Roles, equipment, evacuation routes, drills, contacts","Just emergency phone numbers","Just lifeguard schedules"], c:1, e:"A complete EAP covers roles, equipment, routes, rehearsals, and contacts — and is reviewed annually."}
+      ]
+    }
+  },
+];
+
+// ---------------- FINAL EXAM QUESTION POOL ----------------
+const FINAL_EXAM_POOL = [
+  // Water chemistry
+  {q:"PHTA's ideal pH range for a swimming pool is:", a:["6.5 – 7.0","7.0 – 7.4","7.2 – 7.8","7.8 – 8.4"], c:2, e:"7.2 – 7.8 with a sweet spot of 7.4 – 7.6."},
+  {q:"To raise total alkalinity, add:", a:["Soda ash","Sodium bicarbonate","Calcium chloride","Muriatic acid"], c:1, e:"Sodium bicarbonate (baking soda) raises TA with minimal effect on pH at the recommended range."},
+  {q:"Ideal calcium hardness for a pool is:", a:["50 – 100 ppm","100 – 200 ppm","200 – 400 ppm","500 – 800 ppm"], c:2, e:"Pools target 200–400 ppm calcium hardness."},
+  {q:"A Langelier Saturation Index of +0.6 indicates:", a:["Balanced water","Aggressive water","Scaling water","Sanitized water"], c:2, e:"Positive LSI = scaling water; deposits will form on surfaces."},
+  {q:"Cyanuric acid (CYA) primarily functions as:", a:["A sanitizer","A pH buffer","A UV chlorine stabilizer","A clarifier"], c:2, e:"CYA shields chlorine from UV destruction."},
+  {q:"To lower pH safely you would use:", a:["Soda ash","Calcium chloride","Muriatic acid","Sodium hypochlorite"], c:2, e:"Muriatic acid (or sodium bisulfate) lowers pH."},
+  {q:"Maximum recommended TDS above source water is roughly:", a:["100 ppm","500 ppm","1500 ppm","5000 ppm"], c:2, e:"PHTA recommends TDS not exceed 1500 ppm above the source water value."},
+  {q:"Soda ash is used primarily to:", a:["Lower pH","Raise pH","Lower TA","Raise calcium hardness"], c:1, e:"Soda ash (sodium carbonate) raises pH."},
+  // Disinfection
+  {q:"The active disinfecting form of chlorine is:", a:["OCl⁻","HOCl","NaOCl","Ca(OCl)₂"], c:1, e:"Hypochlorous acid (HOCl) is the active disinfectant."},
+  {q:"At pH 7.5 the percent of free chlorine in HOCl form is approximately:", a:["10%","25%","50%","75%"], c:2, e:"At pH 7.5, ~50% of FC is in the active HOCl form."},
+  {q:"Combined chlorine reflects chlorine combined with:", a:["Calcium","Cyanuric acid","Ammonia and nitrogen compounds","Carbonates"], c:2, e:"Chloramines form when chlorine combines with bather waste (sweat, urine, oils)."},
+  {q:"To reach breakpoint you must raise FC to roughly:", a:["2× combined chlorine","5× combined chlorine","10× combined chlorine","100× combined chlorine"], c:2, e:"Breakpoint requires FC ≈ 10 × CC."},
+  {q:"Trichlor adds which to the pool water?", a:["Calcium","Bromine","Cyanuric acid","Sodium"], c:2, e:"Trichlor is stabilized chlorine; each dose adds CYA."},
+  {q:"Mixing trichlor and cal-hypo can cause:", a:["A clear pool","Algae","A fire / explosion hazard","No reaction"], c:2, e:"Never mix chlorine types; combinations can ignite."},
+  {q:"Bromine is most commonly used in:", a:["Outdoor lap pools","Spas / hot tubs","Wading pools","Spray pads"], c:1, e:"Bromine is more stable in hot water and is preferred for spas."},
+  {q:"Recommended FC range for a public pool is:", a:["0.2–0.5 ppm","1–4 ppm","8–12 ppm","20–30 ppm"], c:1, e:"1–4 ppm FC is the standard pool range."},
+  {q:"Cryptosporidium is best inactivated by:", a:["Chlorine alone at 1 ppm","UV light or extended high-FC dosing","Ozone alone","Heat above 90°F"], c:1, e:"Crypto is chlorine-resistant; UV is the standard supplemental defense."},
+  {q:"Salt-chlorine generators require salinity around:", a:["100 ppm","1000 ppm","3000–4000 ppm","20,000 ppm"], c:2, e:"Most salt cells operate at 3000–4000 ppm dissolved salt."},
+  // Filtration
+  {q:"Standard turnover for a public pool is:", a:["1 hour","6 hours","12 hours","24 hours"], c:1, e:"Public pools default to ≤ 6 hours turnover."},
+  {q:"Required gpm for a 90,000-gal pool with a 6-hour turnover is approximately:", a:["100","250","500","1500"], c:1, e:"90,000 / (6 × 60) = 250 gpm."},
+  {q:"Sand filters should be backwashed when pressure rises:", a:["1–2 psi above clean","8–10 psi above clean","20+ psi above clean","Pressure does not matter"], c:1, e:"Standard backwash trigger: 8–10 psi above clean baseline."},
+  {q:"Which filter type provides the finest particle removal?", a:["Sand","Cartridge","DE","All equal"], c:2, e:"DE filters reach ~3–5 microns."},
+  {q:"Cartridge filters are best cleaned by:", a:["Backwashing","Removing and hosing","Replacing the sand","Adding DE"], c:1, e:"Cartridges are removed and hosed off; backwashing does not apply."},
+  {q:"Spa turnover under MAHC defaults is typically:", a:["6 hours","2 hours","1 hour","30 minutes"], c:3, e:"Spas require a 30-minute turnover."},
+  {q:"Multiport valves must NEVER be turned while:", a:["The pool is in use","The pump is running","The chlorinator is on","Lights are on"], c:1, e:"Always shut off the pump first to avoid damaging the spider gasket."},
+  // Operations
+  {q:"Free chlorine and pH should be tested at least every:", a:["12 hours","2–4 hours","Once a day","Once a week"], c:1, e:"PHTA recommends FC and pH every 2–4 hours during operation; spas more often."},
+  {q:"For a formed-stool fecal accident, treat to:", a:["1 ppm for 5 min","2 ppm at pH 7.5 for 25 min (CT 50)","20 ppm for 12.75 hr","No action"], c:1, e:"Formed-stool: CT 50 = approx FC 2 ppm at pH 7.5 for 25 minutes."},
+  {q:"Diarrheal (Crypto) accident response requires FC of:", a:["1 ppm","5 ppm","10 ppm","20 ppm at pH ≤ 7.5 for 12.75 hours"], c:3, e:"Crypto: CT 15,300 = FC 20 ppm at pH ≤ 7.5 for 12.75 hours; CYA ideally 0."},
+  {q:"DPD reagent typically remains accurate for:", a:["1 month","6 months","About 12 months","Indefinite"], c:2, e:"DPD reagent loses sensitivity over time; replace annually and store cool/dark."},
+  {q:"Public pool operations logs are typically retained for:", a:["1 month","6 months","3–5 years","Forever"], c:2, e:"Most jurisdictions require 3–5 years of retained operational logs."},
+  // Codes
+  {q:"VGB stands for:", a:["Variable Gravity Boiler","Virginia Graeme Baker","Vacuum Gradient Backwash","Voluntary Government Bond"], c:1, e:"Named for Virginia Graeme Baker, who died from a hot-tub entrapment in 2002."},
+  {q:"VGB compliance requires:", a:["A salt cell","ANSI/APSP-16 compliant suction outlet covers","A diving board","Annual repainting"], c:1, e:"Anti-entrapment drain covers meeting ANSI/APSP-16 are mandatory."},
+  {q:"Single main drain installations under VGB must add:", a:["A backup pump","A SVRS or other approved secondary system","A skimmer","A heater"], c:1, e:"SVRS, gravity drainage, suction-limiting vent, automatic shut-off, or properly separated dual drains satisfy VGB."},
+  {q:"The MAHC was developed by the:", a:["EPA","FDA","CDC","DOE"], c:2, e:"The CDC develops the Model Aquatic Health Code."},
+  {q:"ADA requires public pools ≥ 300 linear feet of wall to provide:", a:["No accessible means","One accessible means","Two accessible means (one a lift or sloped entry)","Five accessible means"], c:2, e:"Larger pools require two accessible means; one must be a lift or sloped entry."},
+  {q:"Maximum allowed combined chlorine under MAHC is:", a:["0.4 ppm","1.0 ppm","2.0 ppm","No limit"], c:0, e:"CC must remain ≤ 0.4 ppm under MAHC."},
+  {q:"Pool drain covers carry a manufacturer life of approximately:", a:["1 year","5–7 years","15 years","30 years"], c:1, e:"VGB-compliant covers must be replaced per the manufacturer's 5–7 year certification."},
+  // Safety
+  {q:"Drowning is most often:", a:["Loud and splashing","Silent and vertical","Fast surface waving","Singing for help"], c:1, e:"Real drowning is silent — vertical posture, head tilted back, no splashing."},
+  {q:"Adult chest compression depth is approximately:", a:["1 inch","2 inches","4 inches","6 inches"], c:1, e:"~2 inches deep at 100–120/min, ratio 30:2."},
+  {q:"AED pads are positioned:", a:["Both on the chest center","Upper right and lower left","Both on the back","Stomach and back"], c:1, e:"Pads go upper right chest and lower-left side below the armpit."},
+  {q:"Hot tub rash is caused by:", a:["Cryptosporidium","Pseudomonas aeruginosa","Norovirus","Giardia"], c:1, e:"Pseudomonas aeruginosa thrives in warm under-sanitized water and produces follicular skin infection."},
+  {q:"After a lightning strike, pools may reopen after:", a:["5 minutes","15 minutes","30 minutes since the last flash/thunder","No restriction"], c:2, e:"Standard reopening rule is 30 minutes after the last observed flash or thunder."},
+  {q:"Eye-wash stations must be located within:", a:["1 second of travel","10 seconds of travel","30 seconds of travel","2 minutes of travel"], c:1, e:"OSHA / ANSI Z358.1: 10-second travel from chemical handling areas."},
+  {q:"Acids and chlorine in storage should be:", a:["Mixed for convenience","Stored together","Stored separately and labeled","Open to air"], c:2, e:"Acids and oxidizers must never share storage; secondary containment is standard."},
+  {q:"There are how many recognized types of suction entrapment?", a:["3","4","5","8"], c:2, e:"Five: body, limb, hair, mechanical, evisceration."},
+  // Equipment
+  {q:"Total Dynamic Head measures:", a:["Filter pressure only","Total resistance the pump must overcome","Flow meter reading","Pool depth"], c:1, e:"TDH is the system's total resistance, measured in feet of head."},
+  {q:"A clogged pump basket can lead to:", a:["Cavitation and impeller damage","Higher heater output","Higher chlorine production","No effect"], c:0, e:"Restricted suction starves the pump, generating cavitation that damages impellers."},
+  {q:"Heater life is most reduced by:", a:["High pH","Aggressive (low LSI) water","Low temperature","Excess CYA"], c:1, e:"Aggressive water dissolves copper headers — the leading cause of premature heater failure."},
+  {q:"Skimmers should be installed approximately:", a:["1 per 100 sq ft","1 per 500 sq ft","1 per 5000 sq ft","Only one per pool"], c:1, e:"PHTA recommends ~1 skimmer per 500 sq ft of surface area."},
+  {q:"Maximum suction-line velocity is typically:", a:["2 ft/sec","6 ft/sec","12 ft/sec","No limit"], c:1, e:"Suction-side velocity is held to 6 ft/sec to prevent cavitation."},
+  {q:"VFDs reduce circulation energy by approximately:", a:["5%","20%","50–70%","99%"], c:2, e:"Variable frequency drives commonly cut circulation energy by 50–70%."},
+  {q:"Chemical feed should be injected:", a:["Upstream of the heater","Downstream of the heater","Inside the filter","At the skimmer"], c:1, e:"Injection downstream of the heater protects the heat exchanger."},
+  // Management
+  {q:"PHTA CPO recertification is required every:", a:["1 year","2 years","5 years","Never"], c:2, e:"PHTA CPO certification expires every 5 years."},
+  {q:"The lifeguard 10-20 rule means:", a:["Scan in 10 sec, reach in 20 sec","10 ft pole and 20 ft rope","10 swimmers / 20 sq ft","10 min on / 20 min off"], c:0, e:"Lifeguards scan their zone in 10 seconds and can reach any point within 20 seconds."},
+  {q:"Lifeguard rotations should typically occur every:", a:["5 minutes","20–30 minutes","2 hours","Once per shift"], c:1, e:"Rotation every 20–30 minutes prevents fatigue and surveillance lapses."},
+  {q:"Largest single source of heat loss in outdoor pools is:", a:["Conduction","Convection","Evaporation","Radiation"], c:2, e:"Evaporation accounts for 50–70% of heat loss; pool covers are the most effective control."},
+  {q:"Spring opening: continuous filtration before testing should run at least:", a:["1 hour","6 hours","24 hours","1 week"], c:2, e:"Run continuous filtration for at least 24 hours before opening."},
+  {q:"In-service training for lifeguards is typically a:", a:["One-time orientation","Weekly recurring requirement","Annual seminar","Optional perk"], c:1, e:"In-service training is typically required weekly (or more frequent)."},
+  {q:"SDS (Safety Data Sheets) must be:", a:["Locked away","Accessible to staff at all times","Filed with EPA only","Reviewed annually"], c:1, e:"OSHA requires SDS accessible to staff during operations."},
+  {q:"A complete daily opening check includes:", a:["Water clarity, chemistry, equipment, signage","Just chemistry","Just water clarity","Just signage"], c:0, e:"A daily opening covers chemistry, clarity, equipment, signage, and rescue equipment."},
+  {q:"Year-over-year tracking of chemical and water use surfaces:", a:["Drift before it becomes a budget surprise","Lifeguard performance","Customer complaints","Marketing demand"], c:0, e:"Tracking month-over-month and year-over-year reveals creep in usage early."},
+  {q:"Required minimum signage at most public pools includes:", a:["Pool depths and rules","Lifeguard salaries","Locker room hours","Snack-bar menu"], c:0, e:"Required signage covers depths, no-diving, rules, capacity, emergency phone, and pool hours."},
+  {q:"Adjusted (carbonate) alkalinity is reduced by:", a:["A correction factor based on CYA","Adding sodium bisulfate","Increasing pH","Adding calcium chloride"], c:0, e:"Carbonate alkalinity = TA – (CYA × correction factor)."},
+  {q:"To lower TDS you must:", a:["Run filter longer","Add a clarifier","Partially drain and refill","Shock with chlorine"], c:2, e:"Dilution by partial drain and refill is the only effective method."},
+  {q:"Granular cal-hypo applied directly to a vinyl liner can:", a:["Improve color","Bleach or damage the liner","Heat the water","Lower CYA"], c:1, e:"Cal-hypo can bleach vinyl and burn plaster if not properly broadcast."},
+  {q:"Outdoor pool CYA is recommended at:", a:["0–10 ppm","30–50 ppm","100–150 ppm","Over 200 ppm"], c:1, e:"30–50 ppm CYA balances UV protection with chlorine effectiveness."},
+  {q:"FC/CYA ratio guideline calls for FC of at least:", a:["1% of CYA","7.5% of CYA","25% of CYA","100% of CYA"], c:1, e:"Most operators target FC ≈ 7.5% of CYA for adequate disinfection."},
+  {q:"Adding muriatic acid safely requires:", a:["Pouring water into acid","Adding acid to water and broadcasting at deep end","Pouring acid directly on liner","Skimming after addition"], c:1, e:"Always add acid TO water, broadcast at deep end with the pump running, then re-test 30 minutes later."},
+  {q:"Spa CC should generally be kept below:", a:["0.4 ppm","1.0 ppm","3.0 ppm","No limit"], c:0, e:"CC must remain below ~0.4 ppm; high CC indicates inadequate sanitation or organic load."},
+  {q:"Required gpm for a 30,000-gallon spa with a 30-minute turnover is:", a:["100 gpm","500 gpm","1000 gpm","2000 gpm"], c:2, e:"30,000 / (0.5 × 60) = 1000 gpm."},
+  {q:"Sand should be replaced approximately every:", a:["1 year","5–7 years","20 years","Never"], c:1, e:"Most operators plan a 5–7 year sand replacement cycle."},
+  {q:"DE backwash water often must be discharged through:", a:["A skimmer","A separation tank","A storm drain","A solar cover"], c:1, e:"Many jurisdictions require a separation tank to prevent DE from entering sewers/storm drains."},
+  {q:"Ozone systems are best classified as:", a:["A residual sanitizer","A supplemental oxidizer","A pH buffer","A stabilizer"], c:1, e:"Ozone is supplemental — it does not maintain a residual; chlorine residual is still required."},
+  {q:"In a public pool, EPA requires the use of:", a:["Distilled water only","An EPA-registered residual sanitizer","Iodine","Hydrogen peroxide alone"], c:1, e:"Public pools require an EPA-registered residual sanitizer (chlorine or bromine)."},
+  {q:"Adjusting eyeball return fittings down or sideways helps to:", a:["Push debris back to the bottom","Circulate the entire pool toward the skimmers","Reduce pump energy","Heat the pool faster"], c:1, e:"Aim eyeballs to direct surface flow toward skimmers; never aim straight up."},
+  {q:"For an evisceration risk to occur, the suction outlet must be:", a:["Properly covered","Missing or broken","Dual-drain","SVRS-protected"], c:1, e:"Eviscerations occur with exposed suction inlets; VGB compliance prevents this."},
+  {q:"AEDs should be located:", a:["In manager's office","Within 1–3 minutes of any aquatic area","Off-site","Locked nightly"], c:1, e:"AEDs must be reachable within minutes; visible and accessible during operations."},
+  {q:"Heat pumps deliver high efficiency through:", a:["Burning gas","Moving heat from air to water (high COP)","Direct electric resistance","Solar-only operation"], c:1, e:"Heat pumps move ambient heat into water with COP often > 5; very efficient in mild climates."},
+  {q:"Pool covers on outdoor pools cut overnight evaporation by approximately:", a:["10%","30%","50% or more","No effect"], c:2, e:"Covers cut evaporation by 50% or more — the largest single energy savings."},
+  {q:"A pool inspector arrives unannounced. The CPO should:", a:["Refuse access","Provide logs and answer questions cooperatively","Tell them to come back next week","Hide chemicals"], c:1, e:"Cooperate fully; provide logs, certifications, EAP, and SDS as requested."}
+];
+
+// ---------------- APP STATE & STORAGE ----------------
+const STORAGE_KEY = "cpo_app_v1";
+const EXAM_QUESTIONS = 55;
+const EXAM_DURATION_MS = 3 * 60 * 60 * 1000; // 3 hours
+const EXAM_PASS_PCT = 70;
+const MODULE_PASS_PCT = 80;
+
+let state = loadState();
+
+function loadState(){
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) return JSON.parse(raw);
+  } catch(e){}
+  return {
+    profiles:{},        // { profileId: { name, pin, createdAt, progress, examEndAt, currentExam } }
+    currentProfileId:null,
+    screen:"welcome",
+    nav:{}
+  };
+}
+function saveState(){
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch(e){}
+}
+function currentUser(){ return state.currentProfileId ? state.profiles[state.currentProfileId] : null; }
+function ensureProgress(user){
+  if(!user.progress) user.progress = {};
+  MODULES.forEach(m=>{
+    if(!user.progress[m.id]) user.progress[m.id] = {bestScore:0, completed:false, miniBest:{}, lastSection:0};
+  });
+}
+
+// ---------------- ROUTING ----------------
+function go(screen, nav){ state.screen = screen; state.nav = nav || {}; saveState(); render(); }
+
+function render(){
+  const main = document.getElementById("main");
+  const topnav = document.getElementById("topnav");
+  // top nav
+  const u = currentUser();
+  topnav.innerHTML = "";
+  if (u){
+    const who = document.createElement("span");
+    who.className = "who";
+    who.textContent = "Signed in · " + u.name;
+    topnav.appendChild(who);
+    if (state.screen !== "welcome"){
+      const dash = document.createElement("button");
+      dash.className = "btn-link"; dash.textContent = "Dashboard";
+      dash.onclick = ()=>go("dashboard");
+      topnav.appendChild(dash);
+    }
+    const out = document.createElement("button");
+    out.className = "btn-link"; out.textContent = "Log out";
+    out.onclick = ()=>{ state.currentProfileId = null; go("welcome"); };
+    topnav.appendChild(out);
+  }
+  // body
+  switch(state.screen){
+    case "welcome": return renderWelcome(main);
+    case "createProfile": return renderCreateProfile(main);
+    case "login": return renderLogin(main);
+    case "dashboard": return renderDashboard(main);
+    case "module": return renderModule(main);
+    case "moduleQuiz": return renderModuleQuiz(main);
+    case "exam": return renderFinalExam(main);
+    case "examResults": return renderExamResults(main);
+    default: return renderWelcome(main);
+  }
+}
+
+// ---------------- WELCOME / PROFILES ----------------
+function renderWelcome(main){
+  const profiles = Object.values(state.profiles);
+  main.innerHTML = `
+    <section class="welcome">
+      <div class="welcome-card">
+        <div class="welcome-eyebrow">Powered by Oasis</div>
+        <h1 class="welcome-title">CPO Exam Prep</h1>
+        <p class="welcome-sub">Your professional study companion for the PHTA Certified Pool/Spa Operator® certification — eight expert modules, mini-quizzes, and a full timed mock exam.</p>
+        <div class="welcome-actions">
+          <button class="btn-primary" id="btnCreate">Create new profile</button>
+          ${profiles.length ? '<button class="btn-ghost" id="btnSignIn">Sign in</button>' : ''}
+        </div>
+        ${profiles.length ? `
+        <div class="profile-list">
+          <div class="profile-list-label">Continue as</div>
+          <div class="profile-chips">
+            ${profiles.map(p=>`<button class="profile-chip" data-id="${p.id}">${escapeHtml(p.name)}</button>`).join("")}
+          </div>
+        </div>` : ''}
+      </div>
+    </section>`;
+  document.getElementById("btnCreate").onclick = ()=>go("createProfile");
+  if (profiles.length){
+    document.getElementById("btnSignIn").onclick = ()=>go("login");
+    document.querySelectorAll(".profile-chip").forEach(b=>{
+      b.onclick = ()=>go("login",{preselect:b.getAttribute("data-id")});
+    });
+  }
+}
+
+function renderCreateProfile(main){
+  main.innerHTML = `
+    <section class="welcome">
+      <div class="welcome-card">
+        <div class="welcome-eyebrow">Powered by Oasis</div>
+        <h1 class="welcome-title">Create your profile</h1>
+        <p class="welcome-sub">Each learner has their own progress, scores, and exam history.</p>
+        <div class="field"><label>Your name</label><input id="cpName" type="text" maxlength="40" placeholder="e.g. Alex Morgan" autofocus></div>
+        <div class="field"><label>4-digit PIN</label><input id="cpPin" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="4" placeholder="••••"></div>
+        <div class="field"><label>Confirm PIN</label><input id="cpPin2" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="4" placeholder="••••"></div>
+        <div id="cpErr" class="field-error" style="display:none"></div>
+        <div class="welcome-actions">
+          <button class="btn-primary" id="cpGo">Create profile</button>
+          <button class="btn-ghost" id="cpBack">Back</button>
+        </div>
+      </div>
+    </section>`;
+  document.getElementById("cpBack").onclick = ()=>go("welcome");
+  document.getElementById("cpGo").onclick = ()=>{
+    const name = document.getElementById("cpName").value.trim();
+    const pin = document.getElementById("cpPin").value.trim();
+    const pin2 = document.getElementById("cpPin2").value.trim();
+    const err = document.getElementById("cpErr");
+    err.style.display = "none";
+    if (!name) return showErr(err,"Please enter your name.");
+    if (!/^\d{4}$/.test(pin)) return showErr(err,"PIN must be exactly 4 digits.");
+    if (pin !== pin2) return showErr(err,"PINs do not match.");
+    if (Object.values(state.profiles).some(p=>p.name.toLowerCase()===name.toLowerCase()))
+      return showErr(err,"That name is already taken on this device.");
+    const id = "u_" + Date.now() + "_" + Math.floor(Math.random()*1000);
+    state.profiles[id] = {id, name, pin, createdAt:Date.now(), progress:{}, examEndAt:null, currentExam:null, examBest:null};
+    state.currentProfileId = id;
+    ensureProgress(state.profiles[id]);
+    saveState();
+    toast("Profile created — welcome, " + name + "!");
+    go("dashboard");
+  };
+}
+function showErr(el,msg){ el.textContent = msg; el.style.display="block"; }
+
+function renderLogin(main){
+  const profiles = Object.values(state.profiles).sort((a,b)=>a.name.localeCompare(b.name));
+  if (!profiles.length){ go("createProfile"); return; }
+  const pre = state.nav.preselect || profiles[0].id;
+  main.innerHTML = `
+    <section class="welcome">
+      <div class="welcome-card">
+        <div class="welcome-eyebrow">Powered by Oasis</div>
+        <h1 class="welcome-title">Welcome back</h1>
+        <p class="welcome-sub">Pick your profile and enter your PIN to continue.</p>
+        <div class="field"><label>Profile</label>
+          <select id="liName">${profiles.map(p=>`<option value="${p.id}" ${p.id===pre?'selected':''}>${escapeHtml(p.name)}</option>`).join("")}</select>
+        </div>
+        <div class="field"><label>4-digit PIN</label><input id="liPin" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="4" placeholder="••••" autofocus></div>
+        <div id="liErr" class="field-error" style="display:none"></div>
+        <div class="welcome-actions">
+          <button class="btn-primary" id="liGo">Sign in</button>
+          <button class="btn-ghost" id="liBack">Back</button>
+        </div>
+      </div>
+    </section>`;
+  document.getElementById("liBack").onclick = ()=>go("welcome");
+  document.getElementById("liGo").onclick = doLogin;
+  document.getElementById("liPin").addEventListener("keydown",e=>{ if(e.key==="Enter") doLogin(); });
+  function doLogin(){
+    const id = document.getElementById("liName").value;
+    const pin = document.getElementById("liPin").value.trim();
+    const err = document.getElementById("liErr");
+    err.style.display = "none";
+    if (!state.profiles[id]) return showErr(err,"Profile not found.");
+    if (state.profiles[id].pin !== pin) return showErr(err,"Incorrect PIN.");
+    state.currentProfileId = id;
+    ensureProgress(state.profiles[id]);
+    saveState();
+    toast("Welcome back, " + state.profiles[id].name + "!");
+    go("dashboard");
+  }
+}
+
+// ---------------- DASHBOARD ----------------
+function renderDashboard(main){
+  const u = currentUser();
+  if (!u){ go("welcome"); return; }
+  ensureProgress(u);
+  const totalPct = Math.round(MODULES.reduce((s,m)=>s + (u.progress[m.id].bestScore||0),0) / MODULES.length);
+  const allComplete = MODULES.every(m=>u.progress[m.id].completed);
+  const nextIncomplete = MODULES.find(m=>!u.progress[m.id].completed);
+  const continueText = nextIncomplete ? `Continue: ${nextIncomplete.title}` : (u.examBest ? "Retake the final exam" : "Take the final exam");
+  const continueAction = nextIncomplete ? ()=>go("module",{moduleId:nextIncomplete.id}) : ()=>startFinalExam();
+  main.innerHTML = `
+    <div class="wrap">
+      <section class="hero">
+        <div class="hero-eyebrow">Welcome back</div>
+        <h1 class="hero-title">${escapeHtml(u.name)}</h1>
+        <div class="hero-row">
+          <div class="hero-stat"><div class="hero-stat-num">${totalPct}%</div><div class="hero-stat-label">Overall progress</div></div>
+          <div class="hero-stat"><div class="hero-stat-num">${MODULES.filter(m=>u.progress[m.id].completed).length}/${MODULES.length}</div><div class="hero-stat-label">Modules complete</div></div>
+          <div class="hero-stat"><div class="hero-stat-num">${u.examBest!=null?u.examBest+"%":"—"}</div><div class="hero-stat-label">Best mock exam</div></div>
+        </div>
+        <button class="btn-primary hero-cta" id="continueBtn">${continueText}</button>
+      </section>
+
+      <h2 class="section-h">Course Modules</h2>
+      <div class="modules-grid">
+        ${MODULES.map((m,i)=>moduleCard(m,i,u)).join("")}
+      </div>
+
+      <h2 class="section-h">Final Mock Exam</h2>
+      ${examCard(u, allComplete)}
+    </div>`;
+  document.getElementById("continueBtn").onclick = continueAction;
+  document.querySelectorAll("[data-mod]").forEach(b=>{
+    b.onclick = ()=>go("module",{moduleId:b.getAttribute("data-mod")});
+  });
+  const examBtn = document.getElementById("examBtn");
+  if (examBtn) examBtn.onclick = ()=>startFinalExam();
+}
+
+function moduleCard(m,i,u){
+  const p = u.progress[m.id];
+  const status = p.completed ? '<span class="badge complete">Complete</span>'
+                : (p.bestScore>0 ? '<span class="badge progress">In progress</span>'
+                : '<span class="badge unlocked">Not started</span>');
+  return `
+    <button class="module-card" data-mod="${m.id}">
+      <div class="module-card-top">
+        <div class="module-num">Module ${i+1}</div>
+        ${status}
+      </div>
+      <div class="module-card-title">${escapeHtml(m.title)}</div>
+      <div class="bar"><div class="bar-fill" style="width:${p.bestScore||0}%"></div></div>
+      <div class="module-card-meta">${m.sections.length} sections · ${m.miniQuizzes.length} mini quizzes · Best ${p.bestScore||0}%</div>
+    </button>`;
+}
+
+function examCard(u, unlocked){
+  if (!unlocked){
+    return `
+      <div class="exam-card locked">
+        <div class="exam-card-body">
+          <div class="exam-eyebrow">Locked</div>
+          <div class="exam-title">Final Mock Exam</div>
+          <div class="exam-sub">Complete all 8 modules at 80%+ to unlock the timed practice exam.</div>
+          <div class="unlock-banner">Modules complete: ${MODULES.filter(m=>u.progress[m.id].completed).length} of ${MODULES.length}</div>
+        </div>
+      </div>`;
+  }
+  return `
+    <div class="exam-card">
+      <div class="exam-card-body">
+        <div class="exam-eyebrow">Unlocked</div>
+        <div class="exam-title">Final Mock Exam</div>
+        <div class="exam-sub">${EXAM_QUESTIONS} questions · 3-hour countdown · pass with ${EXAM_PASS_PCT}% · timer continues if you close the browser.</div>
+        ${u.examBest!=null?`<div class="unlock-banner">Best score: ${u.examBest}%</div>`:""}
+        ${u.examEndAt && Date.now()<u.examEndAt ? `<div class="unlock-banner" style="background:#fff3e6;border-color:#f0d4a4;color:#7a4e10">Exam already in progress — resume to continue.</div>`:""}
+        <button class="btn-primary" id="examBtn">${u.examEndAt && Date.now()<u.examEndAt ? "Resume exam" : (u.examBest!=null ? "Retake exam":"Begin exam")}</button>
+      </div>
+    </div>`;
+}
+
+// ---------------- MODULE VIEW ----------------
+function renderModule(main){
+  const u = currentUser(); if (!u){ go("welcome"); return; }
+  const m = MODULES.find(x=>x.id===state.nav.moduleId);
+  if (!m){ go("dashboard"); return; }
+  ensureProgress(u);
+  const p = u.progress[m.id];
+  const idx = MODULES.indexOf(m);
+
+  let html = `<div class="wrap">
+    <div class="module-head">
+      <div class="module-eyebrow">Module ${idx+1} of ${MODULES.length}</div>
+      <h1 class="module-title">${escapeHtml(m.title)}</h1>
+      <p class="module-intro">${escapeHtml(m.intro)}</p>
+      <div class="bar"><div class="bar-fill" style="width:${p.bestScore||0}%"></div></div>
+      <div class="module-meta">Best completion score: ${p.bestScore||0}%</div>
+    </div>`;
+
+  m.sections.forEach((s,si)=>{
+    html += `<div class="section-card"><div class="section-num">Section ${si+1}</div><h2 class="section-title">${escapeHtml(s.title)}</h2><div class="section-body">${s.body}</div></div>`;
+    const mq = m.miniQuizzes.find(q=>q.afterSection===si+1);
+    if (mq) html += renderMiniQuiz(m, mq);
+  });
+
+  // completion quiz launcher
+  if (m.completionQuiz){
+    html += `<div class="quiz-block ${p.completed?'completion':''}">
+      <div class="quiz-eyebrow">Module Completion</div>
+      <h2 class="quiz-title">${escapeHtml(m.completionQuiz.title)}</h2>
+      <p class="quiz-sub">${m.completionQuiz.questions.length} questions · pass with ${MODULE_PASS_PCT}% to mark this module complete.</p>
+      ${p.bestScore?`<div class="hero-stat-label" style="margin-bottom:8px">Best score so far: ${p.bestScore}%</div>`:""}
+      <button class="btn-primary" id="startCompletion">${p.completed?"Retake completion quiz":"Take completion quiz"}</button>
+    </div>`;
+  }
+
+  // module nav
+  html += `<div class="module-nav">
+    <button class="btn-ghost" id="backDash">← Back to dashboard</button>
+    ${idx>0?`<button class="btn-ghost" id="prevMod">Previous module</button>`:""}
+    ${idx<MODULES.length-1?`<button class="btn-ghost" id="nextMod">Next module →</button>`:""}
+  </div></div>`;
+
+  main.innerHTML = html;
+  document.getElementById("backDash").onclick = ()=>go("dashboard");
+  if (document.getElementById("prevMod")) document.getElementById("prevMod").onclick = ()=>go("module",{moduleId:MODULES[idx-1].id});
+  if (document.getElementById("nextMod")) document.getElementById("nextMod").onclick = ()=>go("module",{moduleId:MODULES[idx+1].id});
+  if (document.getElementById("startCompletion")) document.getElementById("startCompletion").onclick = ()=>go("moduleQuiz",{moduleId:m.id});
+  attachMiniQuizHandlers(m);
+}
+
+function renderMiniQuiz(m, mq){
+  const u = currentUser();
+  const p = u.progress[m.id];
+  const key = "mq_"+m.id+"_"+mq.afterSection;
+  const best = p.miniBest[key]||0;
+  let html = `<div class="quiz-block" data-mqkey="${key}">
+    <div class="quiz-eyebrow">Mini quiz</div>
+    <h3 class="quiz-title">${escapeHtml(mq.title)}</h3>
+    <p class="quiz-sub">${mq.questions.length} questions · best score: ${best}%</p>
+    <div class="quiz-body">`;
+  mq.questions.forEach((q,qi)=>{
+    html += `<div class="q-card" data-q="${qi}"><div class="q-text">${qi+1}. ${escapeHtml(q.q)}</div><div class="opts">`;
+    q.a.forEach((opt,oi)=>{
+      html += `<button class="opt" data-opt="${oi}">${String.fromCharCode(65+oi)}. ${escapeHtml(opt)}</button>`;
+    });
+    html += `</div><div class="feedback" style="display:none"></div></div>`;
+  });
+  html += `</div><div class="quiz-foot"><button class="btn-primary" data-mq-submit>Score quiz</button><div class="quiz-result" style="display:none"></div></div></div>`;
+  return html;
+}
+
+function attachMiniQuizHandlers(m){
+  document.querySelectorAll("[data-mqkey]").forEach(block=>{
+    block.querySelectorAll(".q-card").forEach(qc=>{
+      qc.querySelectorAll(".opt").forEach(opt=>{
+        opt.onclick = ()=>{
+          qc.querySelectorAll(".opt").forEach(o=>o.classList.remove("selected"));
+          opt.classList.add("selected");
+        };
+      });
+    });
+    block.querySelector("[data-mq-submit]").onclick = ()=>scoreMiniQuiz(m, block);
+  });
+}
+
+function scoreMiniQuiz(m, block){
+  const key = block.getAttribute("data-mqkey");
+  const mq = m.miniQuizzes.find(q=>"mq_"+m.id+"_"+q.afterSection===key);
+  let correct = 0;
+  block.querySelectorAll(".q-card").forEach((qc,qi)=>{
+    const sel = qc.querySelector(".opt.selected");
+    const q = mq.questions[qi];
+    qc.querySelectorAll(".opt").forEach((opt,oi)=>{
+      opt.classList.remove("correct","wrong");
+      if (oi===q.c) opt.classList.add("correct");
+      if (sel===opt && oi!==q.c) opt.classList.add("wrong");
+      opt.disabled = true;
+    });
+    const fb = qc.querySelector(".feedback");
+    if (sel){
+      const oi = parseInt(sel.getAttribute("data-opt"));
+      if (oi===q.c){ correct++; fb.className="feedback ok"; fb.innerHTML = "✓ Correct. " + q.e; }
+      else { fb.className="feedback bad"; fb.innerHTML = "✗ The correct answer is " + String.fromCharCode(65+q.c) + ". " + q.e; }
+    } else {
+      fb.className="feedback bad"; fb.innerHTML = "No answer — the correct answer is " + String.fromCharCode(65+q.c) + ". " + q.e;
+    }
+    fb.style.display="block";
+  });
+  const pct = Math.round(correct/mq.questions.length*100);
+  const u = currentUser();
+  ensureProgress(u);
+  const p = u.progress[m.id];
+  if (!p.miniBest[key] || p.miniBest[key] < pct) p.miniBest[key] = pct;
+  saveState();
+  const result = block.querySelector(".quiz-result");
+  result.style.display="block";
+  result.innerHTML = `You scored <strong>${correct}/${mq.questions.length} (${pct}%)</strong>. <button class="btn-ghost" data-retry>Retry quiz</button>`;
+  result.querySelector("[data-retry]").onclick = ()=>{
+    block.querySelectorAll(".opt").forEach(o=>{ o.disabled=false; o.classList.remove("selected","correct","wrong"); });
+    block.querySelectorAll(".feedback").forEach(f=>f.style.display="none");
+    result.style.display="none";
+  };
+}
+
+// ---------------- COMPLETION QUIZ ----------------
+function renderModuleQuiz(main){
+  const u = currentUser(); if (!u){ go("welcome"); return; }
+  const m = MODULES.find(x=>x.id===state.nav.moduleId);
+  if (!m || !m.completionQuiz){ go("dashboard"); return; }
+  const cq = m.completionQuiz;
+  let html = `<div class="wrap">
+    <div class="module-head">
+      <div class="module-eyebrow">Module Completion Quiz</div>
+      <h1 class="module-title">${escapeHtml(cq.title)}</h1>
+      <p class="module-intro">${cq.questions.length} questions · score ${MODULE_PASS_PCT}% or higher to mark this module complete.</p>
+    </div>
+    <div class="quiz-block completion" id="cqBlock">
+      <div class="quiz-body">`;
+  cq.questions.forEach((q,qi)=>{
+    html += `<div class="q-card" data-q="${qi}"><div class="q-text">${qi+1}. ${escapeHtml(q.q)}</div><div class="opts">`;
+    q.a.forEach((opt,oi)=>{
+      html += `<button class="opt" data-opt="${oi}">${String.fromCharCode(65+oi)}. ${escapeHtml(opt)}</button>`;
+    });
+    html += `</div><div class="feedback" style="display:none"></div></div>`;
+  });
+  html += `</div>
+      <div class="quiz-foot">
+        <button class="btn-primary" id="submitCQ">Submit completion quiz</button>
+        <button class="btn-ghost" id="cancelCQ">Back to module</button>
+      </div>
+      <div class="quiz-result" id="cqResult" style="display:none"></div>
+    </div></div>`;
+  main.innerHTML = html;
+  document.getElementById("cancelCQ").onclick = ()=>go("module",{moduleId:m.id});
+  document.querySelectorAll("#cqBlock .q-card").forEach(qc=>{
+    qc.querySelectorAll(".opt").forEach(opt=>{
+      opt.onclick = ()=>{
+        qc.querySelectorAll(".opt").forEach(o=>o.classList.remove("selected"));
+        opt.classList.add("selected");
+      };
+    });
+  });
+  document.getElementById("submitCQ").onclick = ()=>{
+    let correct = 0;
+    document.querySelectorAll("#cqBlock .q-card").forEach((qc,qi)=>{
+      const sel = qc.querySelector(".opt.selected");
+      const q = cq.questions[qi];
+      qc.querySelectorAll(".opt").forEach((opt,oi)=>{
+        opt.classList.remove("correct","wrong");
+        if (oi===q.c) opt.classList.add("correct");
+        if (sel===opt && oi!==q.c) opt.classList.add("wrong");
+        opt.disabled = true;
+      });
+      const fb = qc.querySelector(".feedback");
+      if (sel){
+        const oi = parseInt(sel.getAttribute("data-opt"));
+        if (oi===q.c){ correct++; fb.className="feedback ok"; fb.innerHTML="✓ Correct. " + q.e; }
+        else { fb.className="feedback bad"; fb.innerHTML="✗ Correct answer: " + String.fromCharCode(65+q.c) + ". " + q.e; }
+      } else {
+        fb.className="feedback bad"; fb.innerHTML="No answer — correct: " + String.fromCharCode(65+q.c) + ". " + q.e;
+      }
+      fb.style.display="block";
+    });
+    const pct = Math.round(correct/cq.questions.length*100);
+    const u = currentUser();
+    ensureProgress(u);
+    const p = u.progress[m.id];
+    if (pct > (p.bestScore||0)) p.bestScore = pct;
+    if (pct >= MODULE_PASS_PCT) p.completed = true;
+    saveState();
+    const result = document.getElementById("cqResult");
+    result.style.display="block";
+    result.innerHTML = `<div class="result-card ${pct>=MODULE_PASS_PCT?'pass':'fail'}">
+      <div class="result-eyebrow">${pct>=MODULE_PASS_PCT?"Module complete":"Keep going"}</div>
+      <div class="result-score">${pct}%</div>
+      <div class="result-meta">You scored ${correct} of ${cq.questions.length}.</div>
+      <div class="result-actions">
+        <button class="btn-primary" id="cqDash">Back to dashboard</button>
+        <button class="btn-ghost" id="cqRetry">Retake quiz</button>
+      </div>
+    </div>`;
+    document.getElementById("cqDash").onclick = ()=>go("dashboard");
+    document.getElementById("cqRetry").onclick = ()=>go("moduleQuiz",{moduleId:m.id});
+    if (pct>=MODULE_PASS_PCT) toast("Module complete! 🎉");
+  };
+}
+
+// ---------------- FINAL EXAM ----------------
+function startFinalExam(){
+  const u = currentUser(); if (!u){ go("welcome"); return; }
+  ensureProgress(u);
+  const allComplete = MODULES.every(m=>u.progress[m.id].completed);
+  if (!allComplete){ toast("Complete all 8 modules to unlock the final exam."); return; }
+  // resume if existing
+  if (u.examEndAt && Date.now() < u.examEndAt && u.currentExam){
+    go("exam"); return;
+  }
+  // build new exam: random shuffle, take EXAM_QUESTIONS
+  const shuffled = FINAL_EXAM_POOL.slice().sort(()=>Math.random()-0.5).slice(0, EXAM_QUESTIONS);
+  u.currentExam = {
+    questions: shuffled,
+    answers: new Array(shuffled.length).fill(null),
+    current: 0,
+    startedAt: Date.now()
+  };
+  u.examEndAt = Date.now() + EXAM_DURATION_MS;
+  saveState();
+  go("exam");
+}
+
+let examTimerInterval = null;
+
+function renderFinalExam(main){
+  const u = currentUser(); if (!u || !u.currentExam){ go("dashboard"); return; }
+  const exam = u.currentExam;
+  const remaining = ()=>Math.max(0, u.examEndAt - Date.now());
+  if (remaining()<=0){ submitFinalExam(true); return; }
+  const q = exam.questions[exam.current];
+  let html = `
+    <div class="exam-shell">
+      <div class="exam-bar">
+        <div class="exam-bar-info">
+          <div class="exam-bar-eye">Final Mock Exam</div>
+          <div class="exam-bar-q">Question ${exam.current+1} of ${exam.questions.length}</div>
+        </div>
+        <div class="timer" id="examTimer">${fmtClock(remaining())}</div>
+        <button class="btn-link" id="examSubmitNow">Submit exam</button>
+      </div>
+      <div class="exam-body">
+        <div class="exam-q">${escapeHtml(q.q)}</div>
+        <div class="opts exam-opts">
+          ${q.a.map((opt,oi)=>`<button class="opt ${exam.answers[exam.current]===oi?'selected':''}" data-opt="${oi}">${String.fromCharCode(65+oi)}. ${escapeHtml(opt)}</button>`).join("")}
+        </div>
+        <div class="exam-foot">
+          <button class="btn-ghost" id="examPrev" ${exam.current===0?'disabled':''}>← Previous</button>
+          <div class="exam-pager">${pagerHtml(exam)}</div>
+          <button class="btn-primary" id="examNext">${exam.current===exam.questions.length-1?'Review & submit':'Next →'}</button>
+        </div>
+      </div>
+    </div>`;
+  main.innerHTML = html;
+  // tick timer
+  if (examTimerInterval) clearInterval(examTimerInterval);
+  examTimerInterval = setInterval(()=>{
+    const t = remaining();
+    const tEl = document.getElementById("examTimer");
+    if (!tEl){ clearInterval(examTimerInterval); return; }
+    tEl.textContent = fmtClock(t);
+    tEl.classList.toggle("warn", t < 30*60*1000 && t >= 5*60*1000);
+    tEl.classList.toggle("danger", t < 5*60*1000);
+    if (t<=0){ clearInterval(examTimerInterval); submitFinalExam(true); }
+  }, 1000);
+  // option clicks
+  document.querySelectorAll(".exam-opts .opt").forEach(opt=>{
+    opt.onclick = ()=>{
+      exam.answers[exam.current] = parseInt(opt.getAttribute("data-opt"));
+      saveState();
+      document.querySelectorAll(".exam-opts .opt").forEach(o=>o.classList.remove("selected"));
+      opt.classList.add("selected");
+      // refresh pager
+      document.querySelector(".exam-pager").innerHTML = pagerHtml(exam);
+      attachPagerHandlers(exam);
+    };
+  });
+  document.getElementById("examPrev").onclick = ()=>{ if (exam.current>0){ exam.current--; saveState(); render(); }};
+  document.getElementById("examNext").onclick = ()=>{
+    if (exam.current<exam.questions.length-1){ exam.current++; saveState(); render(); }
+    else { confirmAndSubmit(); }
+  };
+  document.getElementById("examSubmitNow").onclick = confirmAndSubmit;
+  attachPagerHandlers(exam);
+}
+
+function pagerHtml(exam){
+  return exam.questions.map((_,i)=>`<button class="pgr ${exam.answers[i]!=null?'answered':''} ${i===exam.current?'now':''}" data-i="${i}">${i+1}</button>`).join("");
+}
+function attachPagerHandlers(exam){
+  document.querySelectorAll(".exam-pager .pgr").forEach(p=>{
+    p.onclick = ()=>{ exam.current = parseInt(p.getAttribute("data-i")); saveState(); render(); };
+  });
+}
+function confirmAndSubmit(){
+  const u = currentUser();
+  const unanswered = u.currentExam.answers.filter(a=>a==null).length;
+  const msg = unanswered ? `Submit exam? You have ${unanswered} unanswered question${unanswered===1?'':'s'}.` : "Submit exam now?";
+  if (confirm(msg)) submitFinalExam(false);
+}
+
+function submitFinalExam(byTimer){
+  if (examTimerInterval){ clearInterval(examTimerInterval); examTimerInterval=null; }
+  const u = currentUser();
+  const exam = u.currentExam;
+  let correct = 0;
+  exam.questions.forEach((q,i)=>{ if (exam.answers[i]===q.c) correct++; });
+  const pct = Math.round(correct/exam.questions.length*100);
+  exam.completedAt = Date.now();
+  exam.score = pct;
+  exam.correct = correct;
+  exam.byTimer = byTimer;
+  if (u.examBest==null || pct > u.examBest) u.examBest = pct;
+  u.examEndAt = null;
+  u.lastExam = exam;
+  u.currentExam = null;
+  saveState();
+  go("examResults");
+}
+
+function renderExamResults(main){
+  const u = currentUser(); if (!u || !u.lastExam){ go("dashboard"); return; }
+  const exam = u.lastExam;
+  const passed = exam.score >= EXAM_PASS_PCT;
+  let html = `<div class="wrap">
+    <div class="result-card ${passed?'pass':'fail'}">
+      <div class="result-eyebrow">${passed?"You passed!":"Not quite — keep practicing"}</div>
+      <div class="result-score">${exam.score}%</div>
+      <div class="result-meta">${exam.correct} of ${exam.questions.length} correct${exam.byTimer?" · time expired":""} · pass mark ${EXAM_PASS_PCT}%</div>
+      <div class="result-actions">
+        <button class="btn-primary" id="resDash">Back to dashboard</button>
+        <button class="btn-ghost" id="resRetake">Retake exam</button>
+      </div>
+    </div>
+    <h2 class="section-h">Review every question</h2>
+    <div class="review-list">`;
+  exam.questions.forEach((q,i)=>{
+    const ans = exam.answers[i];
+    const isRight = ans===q.c;
+    html += `<div class="review-q ${isRight?'ok':'bad'}">
+      <div class="review-num">Q${i+1} ${isRight?'✓':'✗'}</div>
+      <div class="review-text">${escapeHtml(q.q)}</div>
+      <div class="opts">`;
+    q.a.forEach((opt,oi)=>{
+      let cls = "opt review-opt";
+      if (oi===q.c) cls += " correct";
+      if (oi===ans && oi!==q.c) cls += " wrong";
+      html += `<div class="${cls}">${String.fromCharCode(65+oi)}. ${escapeHtml(opt)} ${oi===ans?'<span class="your">(your answer)</span>':''}</div>`;
+    });
+    html += `</div><div class="feedback ${isRight?'ok':'bad'}">${q.e}</div></div>`;
+  });
+  html += `</div></div>`;
+  main.innerHTML = html;
+  document.getElementById("resDash").onclick = ()=>go("dashboard");
+  document.getElementById("resRetake").onclick = ()=>{ u.lastExam = null; saveState(); startFinalExam(); };
+}
+
+// ---------------- HELPERS ----------------
+function escapeHtml(s){ return (s||"").replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function fmtClock(ms){
+  const s = Math.max(0,Math.floor(ms/1000));
+  const h = Math.floor(s/3600), m = Math.floor((s%3600)/60), sec = s%60;
+  return `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(sec).padStart(2,'0')}`;
+}
+let toastTimer = null;
+function toast(msg){
+  const t = document.getElementById("toast");
+  t.textContent = msg;
+  t.classList.add("show");
+  if (toastTimer) clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=>t.classList.remove("show"), 3000);
+}
+
+// ---------------- BOOT ----------------
+// If a profile is signed in but no exam in progress, default to dashboard
+if (state.currentProfileId && state.profiles[state.currentProfileId]){
+  ensureProgress(state.profiles[state.currentProfileId]);
+  if (state.screen === "welcome") state.screen = "dashboard";
+} else {
+  state.screen = "welcome";
+}
+render();
+
+</script>
+</body>
+</html>
