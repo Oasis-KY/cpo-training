@@ -6,7 +6,7 @@
  *   - Cross-origin (Google Fonts): stale-while-revalidate.
  * Bump CACHE_VERSION whenever you ship a new index.html or icon set.
  */
-const CACHE_VERSION = 'cpo-v2';
+const CACHE_VERSION = 'cpo-v3';
 const APP_SHELL = [
   './',
   './index.html',
