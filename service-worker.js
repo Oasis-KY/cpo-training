@@ -6,7 +6,7 @@
  *   - Cross-origin (Google Fonts): stale-while-revalidate.
  * Bump CACHE_VERSION whenever you ship a new index.html or icon set.
  */
-const CACHE_VERSION = 'cpo-v4';
+const CACHE_VERSION = 'cpo-v5';
 const APP_SHELL = [
   './',
   './index.html',
@@ -17,7 +17,8 @@ const APP_SHELL = [
   './icon-maskable-512.png',
   './apple-touch-icon.png',
   './favicon-32.png',
-  './favicon.ico'
+  './favicon.ico',
+  './share-card.jpg'
 ];
 
 self.addEventListener('install', (event) => {

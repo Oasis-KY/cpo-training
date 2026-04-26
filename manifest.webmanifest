@@ -1,7 +1,7 @@
 {
-  "name": "CPO Training",
+  "name": "Oasis CPO Training",
   "short_name": "CPO Training",
-  "description": "PHTA Certified Pool/Spa Operator exam study companion — by Oasis.",
+  "description": "PHTA Certified Pool/Spa Operator® exam prep companion. Eight expert modules, mini-quizzes, and a full timed mock exam. By Oasis.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
